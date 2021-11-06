@@ -1,9 +1,7 @@
 # 0x00. AirBnB clone - The console 
 `Release date: Nov-15-2021`
 <!-- share on twitter -->
-[![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)
-
-<img src="img/home_screen_custom.png" alt="Home screen custom banner">
+[![Twitter](https://img.shields.io/twitter/url?labe=share&style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)
 
 ## 0x00.Table of contents
 
