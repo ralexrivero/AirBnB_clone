@@ -56,7 +56,7 @@ All the development and testing was runned over an operating system Ubuntu 20.04
 
 change to the `AirBnb` directory and run the command:
 
-``` ./console.py```
+``` ./console.py ```
 
 ## 0x04 Testing
 
