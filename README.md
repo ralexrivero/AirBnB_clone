@@ -6,47 +6,90 @@
 ## 0x00.Table of contents
 
 * [0x01 Introduction](#0x01-Introduction)
-* [0x02 Installation](#0x02-Installation)
-* [0x03 Usage](#0x03-Usage)
-* [0x04 License](#0x04-License)
-* [0x05 Contributing](#0x05-Contributing)
-* [0x06 Todo](#0x06-Todo)
-* [0x07 Changelog](#0x07-Changelog)
-* [0x08 Tests](#0x08-Tests)
-* [0x09 Questions](#0x09-Questions)
-* [0x10 Conclusion](#0x10-Conclusion)
-* [0x11 References](#0x11-References)
-* [0x12 Acknowledgements](#0x12-Acknowledgements)
-* [0x13 History](#0x13-History)
-* [0x14 Credits](#0x14-Credits)
+* [0x02 Environment](#0x02-Environment)
+* [0x03 Installation](#0x03-Installation)
+* [0x04 Testing](#0x04-Testing)
+* [0x05 Usage](#0x05-Usage)
+* [0x06 License](#0x06-License)
+* [0x07 Contributing](#0x07-Contributing)
+* [0x08 Todo](#0x08-Todo)
+* [0x09 Changelog](#0x09-Changelog)
+* [0x0A Tests](#0x0A-Tests)
+* [0x0B Questions](#0x0B-Questions)
+* [0x0C Conclusion](#0x0C-Conclusion)
+* [0x0D References](#0x0D-References)
+* [0x0E Acknowledgements](#0x0E-Acknowledgements)
+* [0x0F History](#0x0F-History)
+* [0x10 Credits](#0x10-Credits)
 
 ## 0x01 Introduction
 
-## 0x02 Installation
+## 0x02 Environment
 
-## 0x03 Usage
+<!-- ubuntu -->
+<a href="https://ubuntu.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Ubuntu&color=E95420&logo=Ubuntu&logoColor=E95420&labelColor=2F333A" alt="Suite CRM"></a>
+OS: Ubuntu 20.04 LTS
+<!-- bash -->
+<a href="https://www.gnu.org/software/bash/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GNU%20Bash&color=4EAA25&logo=GNU%20Bash&logoColor=4EAA25&labelColor=2F333A" alt="terminal"></a>
+<!-- python-->
+  <a href="https://www.python.org" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Python&color=FFD43B&logo=python&logoColor=3776AB&labelColor=2F333A" alt="python"></a>
+Language: Python 3.8.3
+<!-- vim -->
+<a href="https://www.vim.org/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Vim&color=019733&logo=Vim&logoColor=019733&labelColor=2F333A" alt="Suite CRM"></a>
+Editor: VIM 8.1.2269
+<!-- git -->
+<a href="https://git-scm.com/" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=Git&color=F05032&logo=Git&logoColor=F05032&labelColor=2F333A" alt="git distributed version control system"></a>
+Control version: Git
+<!-- github -->
+<a href="https://github.com" target="_blank"> <img height="" src="https://img.shields.io/static/v1?label=&message=GitHub&color=181717&logo=GitHub&logoColor=f2f2f2&labelColor=2F333A" alt="Github"></a>
+<!-- Style guidelines -->
+Style guidelines: [pycodestyle (version 2.7.*)](https://pypi.org/project/pycodestyle/)
 
-## 0x04 License
+## 0x03 Installation
 
-## 0x05 Contributing
+```git clone https://github.com/ralexrivero/AirBnB_clone.git```
 
-## 0x06 Todo
+## 0x04 Testing
 
-## 0x07 Changelog
+### Documentation
 
-## 0x08 Tests
+- Modules: ```python3 -c 'print(__import__("my_module").__doc__)'```
+- Classes: ```python3 -c 'print(__import__("my_module").MyClass.__doc__)'```
+- Functions (inside and outside a class): ```python3 -c 'print(__import__("my_module").my_function.__doc__)'```
+and ```python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'```
 
-## 0x09 Questions
+### Python Unit Tests
 
-## 0x10 Conclusion
+- unittest module
+- File extension ``` .py ```
+- Files and folders star with ```test_```
+- Organization:for ```models/base.py```, unit tests in: ```tests/test_models/test_base.py```
+- Execution command: ```python3 -m unittest discover tests```
+- or: ```python3 -m unittest tests/test_models/test_base.py```
 
-## 0x11 References
+## 0x05 Usage
 
-## 0x12 Acknowledgements
+## 0x06 License
 
-## 0x13 History
+## 0x07 Contributing
 
-## 0x14 Credits
+## 0x08 Todo
+
+## 0x09 Changelog
+
+## 0x0A Tests
+
+## 0x0B Questions
+
+## 0x0C Conclusion
+
+## 0x0D References
+
+## 0x0E Acknowledgements
+
+## 0x0F History
+
+## 0x10 Credits
 
 Rodrigo
 
