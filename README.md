@@ -2,16 +2,8 @@
 `Release date: Nov-15-2021`
 <!-- share on twitter -->
 [![](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)
-```
-           88            88                      88
-           ""            88                      88
-                         88                      88
-,adPPYYba, 88 8b,dPPYba, 88,dPPYba,  8b,dPPYba,  88,dPPYba,
-""     `Y8 88 88P'   "Y8 88P'    "8a 88P'   `"8a 88P'    "8a
-,adPPPPP88 88 88         88       d8 88       88 88       d8
-88,    ,88 88 88         88b,   ,a8" 88       88 88b,   ,a8"
-`"8bbdP"Y8 88 88         8Y"Ybbd8"'  88       88 8Y"Ybbd8"'
-```
+
+<img src="img/home_screen_custom.png" alt="Home screen custom banner">
 
 ## 0x00.Table of contents
 
