@@ -5,49 +5,48 @@
 
 ## 0x00.Table of contents
 
-* [0x01.Introduction](#0x01Introduction)
-* [0x02.Installation](#0x02Installation)
-* [0x03.Usage](#0x03Usage)
-* [0x04.License](#0x04License)
-* [0x05.Contributing](#0x05Contributing)
-* [0x06.Todo](#0x06Todo)
-* [0x07.Changelog](#0x07Changelog)
-* [0x08.Tests](#0x08Tests)
-* [0x09.Questions](#0x09Questions)
-* [0x10.Conclusion](#0x10Conclusion)
-* [0x11.References](#0x11References)
-* [0x12.Acknowledgements](#0x12Acknowledgements)
-* [0x13.History](#0x13History)
-* [0x14.Credits](#0x14Credits)
+* [0x01 Introduction](#0x01%20%Introduction)
+* [0x02 Installation](#0x02%20%Installation)
+* [0x03 Usage](#0x03%20%Usage)
+* [0x04 License](#0x04%20%License)
+* [0x05 Contributing](#0x05%20%Contributing)
+* [0x06 Todo](#0x06%20%Todo)
+* [0x07 Changelog](#0x07%20%Changelog)
+* [0x08 Tests](#0x08%20%Tests)
+* [0x09 Questions](#0x09%20%Questions)
+* [0x10 Conclusion](#0x10%20%Conclusion)
+* [0x11 References](#0x11%20%References)
+* [0x12 Acknowledgements](#0x12%20%Acknowledgements)
+* [0x13 History](#0x13%20%History)
+* [0x14 Credits](#0x14%20%Credits)
 
-## 0x01.Introduction
+## 0x01 Introduction
 
-## 0x02.Installation
+## 0x02 Installation
 
-## 0x03.Usage
+## 0x03 Usage
 
-## 0x04.License
+## 0x04 License
 
-## 0x05.Contributing
+## 0x05 Contributing
 
-## 0x06.Todo
+## 0x06 Todo
 
-## 0x07.Changelog
+## 0x07 Changelog
 
-## 0x08.Tests
+## 0x08 Tests
 
-## 0x09.Questions
+## 0x09 Questions
 
-## 0x10.Conclusion
+## 0x10 Conclusion
 
-## 0x11.References
+## 0x11 References
 
-## 0x12.Acknowledgements
+## 0x12 Acknowledgements
 
-## 0x13.History
+## 0x13 History
 
-## 0x14.Credits
-
+## 0x14 Credits
 
 Rodrigo
 
@@ -56,7 +55,7 @@ Rodrigo
 <a href="https://github.com/RodrigoMato00/" target="_blank">  <img align="left" src="https://img.shields.io/github/followers/RodrigoMato00?style=social" alt="RodrigoMato00 | Github"> </a>
 
 <br/>
-
+<br/>
 
 Ronald
 
