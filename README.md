@@ -5,79 +5,49 @@
 
 ## 0x00.Table of contents
 
-* [0x01.Introduction](#0x01.Introduction)
-* [0x02.Installation](#0x02.Installation)
-* [0x03.Usage](#0x03.Usage)
-* [0x04.License](#0x04.License)
-* [0x05.Contributing](#0x05.Contributing)
-* [0x06.Todo](#0x06.Todo)
-* [0x07.Changelog](#0x07.Changelog)
-* [0x08.Tests](#0x08.Tests)
-* [0x09.Questions](#0x09.Questions)
-* [0x10.Conclusion](#0x10.Conclusion)
-* [0x11.References](#0x11.References)
-* [0x12.Acknowledgements](#0x12.Acknowledgements)
-* [0x13.History](#0x13.History)
-* [0x14.Credits](#0x14.Credits)
-
-* [Description](#Description)
-
+* [0x01.Introduction](#0x01Introduction)
+* [0x02.Installation](#0x02Installation)
+* [0x03.Usage](#0x03Usage)
+* [0x04.License](#0x04License)
+* [0x05.Contributing](#0x05Contributing)
+* [0x06.Todo](#0x06Todo)
+* [0x07.Changelog](#0x07Changelog)
+* [0x08.Tests](#0x08Tests)
+* [0x09.Questions](#0x09Questions)
+* [0x10.Conclusion](#0x10Conclusion)
+* [0x11.References](#0x11References)
+* [0x12.Acknowledgements](#0x12Acknowledgements)
+* [0x13.History](#0x13History)
+* [0x14.Credits](#0x14Credits)
 
 ## 0x01.Introduction
 
-aaa
-
 ## 0x02.Installation
-
-aaaa
 
 ## 0x03.Usage
 
-aaa
-
 ## 0x04.License
-
-aaa
 
 ## 0x05.Contributing
 
-aaa
-
 ## 0x06.Todo
-
-aaa
 
 ## 0x07.Changelog
 
-aaa
-
 ## 0x08.Tests
-
-aaa
 
 ## 0x09.Questions
 
-aaa
-
 ## 0x10.Conclusion
-
-aaa
 
 ## 0x11.References
 
-aaa
-
 ## 0x12.Acknowledgements
-
-aaa
 
 ## 0x13.History
 
-aaa
-
 ## 0x14.Credits
 
-## Description
 
 Rodrigo
 
