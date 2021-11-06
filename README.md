@@ -31,7 +31,7 @@
  <!-- Style guidelines -->
 Style guidelines: [pycodestyle (version 2.7.*)](https://pypi.org/project/pycodestyle/)
 
-All the development and testing was runned operating system Ubuntu 20.04 LTS using programming language Python 3.8.3. The editor used were VIM 8.1.2269 and VSCode 1.6.1. And control version using Git 2.25.1.
+All the development and testing was runned over an operating system Ubuntu 20.04 LTS using programming language Python 3.8.3. The editor used were VIM 8.1.2269 and VSCode 1.6.1. And control version using Git 2.25.1.
 
 ## 0x03 Installation
 
