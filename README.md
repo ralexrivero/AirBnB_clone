@@ -3,6 +3,8 @@
 <!-- share on twitter -->
 [![Twitter](https://img.shields.io/twitter/url?labe=share&style=social&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fralexrivero%2FAirBnB_clone)
 
+<img src="img/home_screen_custom.png" alt="AirBnB Custom banner">
+
 ## 0x00.Table of contents
 
 * [0x01 Introduction](#0x01-Introduction)
