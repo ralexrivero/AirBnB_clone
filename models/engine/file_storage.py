@@ -6,7 +6,7 @@ import json
 
 class FileStorage:
     """ Class FileStorage"""
-    print("FileStorage class")
+    pass
 
     def reload(self):
         """reload method"""
