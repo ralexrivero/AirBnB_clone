@@ -43,10 +43,10 @@ class HBNBCommand(cmd.Cmd):
             if len(args) > 0 and args[0] not in HBNBCommand.my_classes:
                 print("** class doesn't exist **")
             else:
-                len(args) > 0 and args[0] in HBNBCommand.my_classes:
-                    new_object = HBNBCommand.my_classes[args[0]]()
-                    new_object.save()
-                    print(new_object.id)
+                len(args) > 0 and args[0] in HBNBCommand.my_classes
+                new_object = HBNBCommand.my_classes[args[0]]()
+                new_object.save()
+                print(new_object.id)
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
