@@ -9,6 +9,7 @@ import json
 import cmd
 """ 6. Console 0.0.1 """
 
+
 class HBNBCommand(cmd.Cmd):
     """consola HBNB"""
 
@@ -25,7 +26,6 @@ class HBNBCommand(cmd.Cmd):
         'End Of File command to exit the program EOF'
 
         quit()
-
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
