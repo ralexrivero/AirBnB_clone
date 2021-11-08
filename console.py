@@ -23,10 +23,9 @@ class HBNBCommand(cmd.Cmd):
     def do_EOF(self, args):
         """End Of File command to exit the program"""
         'End Of File command to exit the program EOF'
-        
+
         quit()
 
-    def do_help
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
