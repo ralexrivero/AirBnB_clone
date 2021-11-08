@@ -18,8 +18,8 @@ class HBNBCommand(cmd.Cmd):
                    "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
     # my_classes is a diccionary with the classes
     show_list = []
-        for items in my_classes:
-            show_list.append(items)
+    for items in my_classes:
+         show_list.append(items)
     instances = ["do_show", "do_destroy", "do_all", "do_update"] 
 
     def do_quit(self, args):
