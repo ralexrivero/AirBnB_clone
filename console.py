@@ -15,8 +15,12 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
     my_classes = {"BaseModel": BaseModel, "User": User, "State": State,
-                   "City": City, "Amenity": Amenity, "Place": Place}
+                   "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
     # my_classes is a diccionary with the classes
+    show_list = []
+        for items in my_classes:
+            show_list.append(items)
+    instances = ["do_show", "do_destroy", "do_all", "do_update"] 
 
     def do_quit(self, args):
         """Quit command to exit the program"""
@@ -48,5 +52,18 @@ class HBNBCommand(cmd.Cmd):
                 new_object.save()
                 print(new_object.id)
 
+    def do_show(self, args):
+        """Prints the string representation of an instance based on the class name and id."""
+ 
+    def do_destroy(self, args):
+        """ Deletes an instance based on the class name and id"""
+
+    def do_all(self, args):
+        """Prints all string representation of all instances based or not on the class name."""
+    def do_update(self, args):
+        """Updates an instance based on the class name and id by adding or updating attribute
+        (save the change into the JSON file).
+        """
+    
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
