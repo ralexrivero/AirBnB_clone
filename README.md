@@ -26,10 +26,11 @@
 
 ## 0x01 Introduction
 
-Team project
-Console to manage storage system
-Abstraction between objects and how they are stored
+Team project to build a clone of [AirBnB](https://www.airbnb.com/).
 
+The console is a command interpreter to manage objects abstraction between objects and how they are stored
+
+`BaseModel` 
 ## 0x02 Environment
 
 <!-- ubuntu -->
@@ -49,7 +50,47 @@ All the development and testing was runned over an operating system Ubuntu 20.04
 change to the `AirBnb` directory and run the command:
 
 ``` ./console.py ```
+### Execution
 
+In interactive mode
+
+```
+$ ./console.py
+(hbnb) help
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+```
+
+in Non-interactive mode
+
+```
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+```
 ## 0x04 Testing
 
 ### Documentation
@@ -68,7 +109,25 @@ and ```python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'``
 - Execution command: ```python3 -m unittest discover tests```
 - or: ```python3 -m unittest tests/test_models/test_base.py```
 
+### run test in interactive mode
+
+```
+$ echo "python3 -m unittest discover tests" | bash
+```
+
 ## 0x05 Usage
+
+List of commands and examples usage:
+
+The prompt (hbnb) waits for a command in an infinite loop.
+
+- help
+
+example:
+
+- quit
+
+example:
 
 ## 0x06 License
 
