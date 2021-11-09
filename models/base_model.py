@@ -21,7 +21,7 @@ class BaseModel:
        
         else:
        
-            self.created_at = datetime.datetime.now()
+            self.created_at = datetime.now()
             self.id = str(uuid4())
        
         for i in kwargs:
@@ -49,8 +49,7 @@ class BaseModel:
         """ updates the public instance attribute
         updated_at with current time"""
         from models.base_model import BaseModel
-        self.updated_at = datetime.datetime.now()
-        models.storage.new(self)
+        self.updated_at = datetime.now()
         models.storage.save()
 
     def to_dict(self):
