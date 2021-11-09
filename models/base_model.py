@@ -9,17 +9,36 @@ class BaseModel:
     """Base class for all models"""
 
     def __init__(self, *args, **kwargs):
-        """ Initialize a new BaseModel
-            Args:
-                *args: variable length argument list
-                **kwargs: key - value pairs
-        """
-        self.id = str(uuid4)  # Unique id
-        self.created_at = datetime.datetime.now()
+        """ instantiates a new object """
+       
+        if len(args) > 0:
+            for i in args[0]:
+                setattr(self, i, args[0][i])
+                """setattr is a function that takes two arguments:
+                the name of the attribute to be set and the value to be
+                assigned to it.
+                """
+       
+        else:
+       
+            self.created_at = datetime.datetime.now()
+            self.id = str(uuid4())
+       
+        for i in kwargs:
+            print("kwargs: {}: {}".format(i, kwargs[i]))
+
+#    def __init__(self, *args, **kwargs):
+#       """ Initialize a new BaseModel
+#            Args:
+#                *args: variable length argument list
+#                **kwargs: key - value pairs
+#        """
+#        self.id = str(uuid4)  # Unique id
+#        self.created_at = datetime.datetime.now()
         # current datetime when instance is created
-        self.updated_at = datetime.datetime.now()
-        """current datetime when instance is created and
-        updated when change object"""
+#        self.updated_at = datetime.datetime.now()
+#        """current datetime when instance is created and
+#        updated when change object"""
 
     def __str__(self):
         """ Returns a string representation of the object """
