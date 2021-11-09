@@ -15,9 +15,9 @@ class BaseModel:
                 **kwargs: key - value pairs
         """
         self.id = str(uuid4)  # Unique id
-        self.created_at = datetime.now()
+        self.created_at = datetime.datetime.now()
         # current datetime when instance is created
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.datetime.now()
         """current datetime when instance is created and
         updated when change object"""
 
