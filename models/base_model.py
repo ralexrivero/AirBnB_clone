@@ -14,7 +14,9 @@ class BaseModel:
                 *args: variable length argument list
                 **kwargs: key - value pairs
         """
-        self.id = str(uuid4)  # Unique id
+        self.id = str(uuid4)
+        """ Unique id, randomly generated,
+        to avoid collisions between ids of different instances """
         self.created_at = datetime.datetime.now()
         # current datetime when instance is created
         self.updated_at = datetime.datetime.now()
