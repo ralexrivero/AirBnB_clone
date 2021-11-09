@@ -23,6 +23,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     my_classes = {"BaseModel": BaseModel, "User": User, "State": State,
                    "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
+    classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
     # my_classes is a diccionary with the classes
     show_list = []
     for items in my_classes:
@@ -45,23 +46,34 @@ class HBNBCommand(cmd.Cmd):
         if not args:
             print("** class name missing **")
             return
-
-        args = args.split() # divides a args into a list
-        if len.args == 0:
-            print("** class name missing **")
+        args = args.split()
+        if len.args != 1:
+            print("** instance id missing **")
             return
         else:
-            if len(args) > 0 and args[0] not in HBNBCommand.my_classes:
-                print("** class doesn't exist **")
-            else:
-                len(args) > 0 and args[0] in HBNBCommand.my_classes
-                new_object = HBNBCommand.my_classes[args[0]]()
-                new_object.save()
-                print(new_object.id)
+            len(args) > 0 and args[0] in HBNBCommand.classes
+            new_object = HBNBCommand.classes[args[0]]()
+            new_object.save()
+            print(new_object.id)
 
     def do_show(self, args):
-        """Prints the string representation of an instance based on the class name and id."""
- 
+        """Prints string representation of instance based on the class name and id."""
+        args = args.split()
+        if len(args) == 0:
+            print("** class name missing **")
+            return
+        if len(args) == 1:
+            print("** instance id missing **")
+            return
+        if args[0] not in HBNBCommand.my_classes:
+            print("** class doesn't exist **")
+            return
+        if args[1] not in HBNBCommand.my_classes[args[0]].all():
+            print("** no instance found **")
+            return
+        else:
+            print(HBNBCommand.my_classes[args[0]].all()[args[1]])
+
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id"""
 
