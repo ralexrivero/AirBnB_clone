@@ -9,3 +9,11 @@ class State(BaseModel):
             name: string - empty string
     """
     name = ""
+
+    def __init__(self, *args, **kwargs):
+        """ Initialize class attributes
+            Args:
+                *args: list of strings
+                **kwargs: dictionary of strings
+        """
+        super().__init__(*args, **kwargs)
