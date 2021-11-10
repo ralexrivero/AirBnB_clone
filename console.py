@@ -14,6 +14,7 @@ import os
 import sys
 import json
 import cmd
+import shlex
 """ 6. Console 0.0.1 """
 
 
@@ -25,6 +26,8 @@ class HBNBCommand(cmd.Cmd):
                    "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
     classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
     # my_classes is a diccionary with the classes
+    # classes is a list with the classes
+
     show_list = []
     for items in my_classes:
          show_list.append(items)
@@ -39,22 +42,17 @@ class HBNBCommand(cmd.Cmd):
         """End Of File command to exit the program"""
 
         quit()
-    
+        
     def do_create(self, args):
         """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id."""
 
         if not args:
             print("** class name missing **")
             return
-        args = args.split()
-        if len.args != 1:
-            print("** instance id missing **")
+        args_list = shlex.split(args)
+        if args_list[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
             return
-        else:
-            len(args) > 0 and args[0] in HBNBCommand.classes
-            new_object = HBNBCommand.classes[args[0]]()
-            new_object.save()
-            print(new_object.id)
 
     def do_show(self, args):
         """Prints the string representation of an instance, show BaseModel 1234-1234-1234"""
@@ -66,20 +64,35 @@ class HBNBCommand(cmd.Cmd):
         if args[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        my_objects = storage.all()
-        for my_object in my_objects.keys():
-            if my_object.split(".")[0] == args[0]:
-                print(my_objects[my_object])
+        #my_objects = storage.all()
+
         
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id"""
 
+        args_list = shlex.split(args)
+        if args_list[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+            return        
+        if len(args) == 1:
+            print("** instance id missing **")
+            return
+        if len(args) == 0:
+            print("** class name missing **")
+            return
+        #if args_list[1] not in my_objects:       
+        #my_objects = storage.all()
+        if args_list[0] not in my_objects:
+            print("** no instance found **")
+            return
+    
     def do_all(self, args):
         """Prints all string representation of all instances based or not on the class name."""
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or updating attribute
         (save the change into the JSON file).
         """
-    
+
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
+
