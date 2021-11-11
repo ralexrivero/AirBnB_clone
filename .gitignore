@@ -2,6 +2,9 @@
 # internal comments
 dontread.txt
 
+# temporary vim files
+*.py.swp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
