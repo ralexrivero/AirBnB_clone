@@ -45,18 +45,24 @@ class FileStorage:
     def save(self):
         """serialize and save objects from __objects to a file
         in json in format json"""
-        dictionary = {}
-        """dicttionary is an empty dictionnary"""
-        for key, value in FileStorage.__objects.items():
-            """this for loop utilise a key and valiu to run
-            FileStorage.__objects.items() and create a dictioanry of
-            key and value"""
-            dictionary[key] = value.to_dict()
-        """dict[key] is equal to value.__dict__"""
-        with open(self.__file_path, 'w') as f:
-            """open(self.__file_path, 'w') open the json file in write mode"""
+        with open(FileStorage.__file_path, 'w') as f:
+            dictionary = {}
+            dictionary.update(FileStorage.__objects)
+            for key, val in dictionary.items():
+                dictionary[key] = val.to_dict()
             json.dump(dictionary, f)
-            """dump(dictionary, f) dump the dictionnary in the file f"""
+        # dictionary = {}
+        # """dicttionary is an empty dictionnary"""
+        # for key, value in FileStorage.__objects.items():
+        #     """this for loop utilise a key and valiu to run
+        #     FileStorage.__objects.items() and create a dictioanry of
+        #     key and value"""
+        #     dictionary[key] = value.to_dict()
+        # """dict[key] is equal to value.__dict__"""
+        # with open(self.__file_path, 'w') as f:
+        #     """open(self.__file_path, 'w') open the json file in write mode"""
+        #     json.dump(dictionary, f)
+        #     """dump(dictionary, f) dump the dictionnary in the file f"""
 
     def reload(self):
         """deserialize and lode objects from the file into python
