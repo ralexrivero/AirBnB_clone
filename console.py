@@ -2,6 +2,7 @@
 """
 Console for object management and storage persistant
 """
+import models
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -17,7 +18,8 @@ import cmd
 import shlex
 """ 6. Console 0.0.1 """
 
-
+my_classes = {"BaseModel": BaseModel, "User": User, "State": State,
+                   "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
 class HBNBCommand(cmd.Cmd):
     """-HBNBCommand(cmd.Cmd) is a class that inherits from cmd.Cmd
                     cmd.Cmd is methods to execute a command prompt command line interface for a Python program.
@@ -33,8 +35,6 @@ class HBNBCommand(cmd.Cmd):
                
 
     prompt = "(hbnb) "
-    my_classes = {"BaseModel": BaseModel, "User": User, "State": State,
-                   "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
     classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
     # my_classes is a diccionary with the classes
     # classes is a list with the classes
@@ -73,41 +73,61 @@ class HBNBCommand(cmd.Cmd):
             return
 
     def do_show(self, args):
-        """Prints the string representation of an instance, show BaseModel 1234-1234-1234.\n"""
+        """Prints the string representation of an instance, format: show <class name> <id>.\n"""
 
-        args = args.split()
-        """args.split() splits a string into a list of words."""
-        if len(args) != 1:
+        args_list = shlex.split(args)
+        """args_list is a list of arguments passed to the command
+              shlex is a lexical analyser for simple shell-like syntax;
+                and shlex.split() splits a string into a list of tokens."""
+        if len(args_list) == 0:
             print("** class name missing **")
             return
-        if args[0] not in HBNBCommand.classes:
+        if args_list[0] not in my_classes:
             print("** class doesn't exist **")
-            return
-        #my_objects = storage.all()
+        else:
+            if len(args_list) == 1:
+                print("** instance id missing **")
+            else:
+                key = args_list[0] + "." + args_list[1]
+                if key in models.storage.all():
+                    print(models.storage.all()[key])
+                else:
+                    print("** no instance found **")
 
         
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id.\n"""
 
         args_list = shlex.split(args)
-        """args_list = shlex.split(args) splits a args_list into a list of words."""
-        if args_list[0] not in HBNBCommand.classes:
-            print("** class doesn't exist **")
-            return        
-        if len(args) == 1:
-            print("** instance id missing **")
-            return
-        if len(args) == 0:
+        """args_list is a list of arguments passed to the command
+                shlex is a lexical analyser for simple shell-like syntax;
+                and shlex.split() splits a string into a list of tokens."""
+        if len(args_list) == 0:
             print("** class name missing **")
             return
-        #if args_list[1] not in my_objects:       
-        my_objects = storage.all()
-        if args_list[0] not in my_objects:
-            print("** no instance found **")
-            return
+        elif args_list[0]in my_classes:
+            """if the args_list[0] is in my_classes, then the class exists"""
+            if len(args_list) > 1:
+                """if the lenght of args_list is greater than 1, then the id is passed"""
+                key = args_list[0] + "." + args_list[1]
+                """key = args_list[0] + "." + args_list[1]
+                    key is the key to search in the dictionary"""
+                if key in models.storage.all():
+                    models.storage.all().pop(key)
+                    """pop(key) removes the key from the dictionary"""
+                    models.storage.save()
+                    """save() saves the changes in the JSON file"""
+                else:
+                    print("** no instance found **")
+            else:
+                print("** instance id missing **")
+        else:
+            print("** class doesn't exist **")
+
     
     def do_all(self, args):
         """Prints all string representation of all instances based or not on the class name.\n"""
+    l
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or updating attribute
         (save the change into the JSON file).\n"""
