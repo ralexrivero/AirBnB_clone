@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ BaseModel that defines all common attributes/methods for other classes """
-import models
+#import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -27,18 +27,18 @@ class BaseModel:
         for i in kwargs:
             print("kwargs: {}: {}".format(i, kwargs[i]))
 
-#    def __init__(self, *args, **kwargs):
-#       """ Initialize a new BaseModel
-#            Args:
-#                *args: variable length argument list
-#                **kwargs: key - value pairs
-#        """
-#        self.id = str(uuid4)  # Unique id
-#        self.created_at = datetime.datetime.now()
-        # current datetime when instance is created
-#        self.updated_at = datetime.datetime.now()
-#        """current datetime when instance is created and
-#        updated when change object"""
+    def __init__(self, *args, **kwargs):
+       """ Initialize a new BaseModel
+            Args:
+                *args: variable length argument list
+                **kwargs: key - value pairs
+        """
+        self.id = str(uuid4)  # Unique id
+        self.created_at = datetime.datetime.now()
+        current datetime when instance is created
+        self.updated_at = datetime.datetime.now()
+        """current datetime when instance is created and
+        updated when change object"""
 
     def __str__(self):
         """ Returns a string representation of the object """
