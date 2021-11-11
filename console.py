@@ -43,7 +43,8 @@ class HBNBCommand(cmd.Cmd):
                "Amenity", "Place", "Review"]
     # my_classes is a diccionary with the classes
     # classes is a list with the classes
-
+    storage.reload()
+    """reload() reloads the JSON file"""
     show_list = []
     for items in my_classes:
         show_list.append(items)
@@ -159,6 +160,29 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
         updating attribute (save the change into the JSON file).\n"""
+    args = args.split()
+    if len(args) == 0:
+        print("** class name missing **")
+        return
+    if len(args) == 1:
+        print("** instance id missing **")
+        return
+    if len(args) == 2:
+        print("** attribute name missing **")
+        return
+    if len(args) == 3:
+        print("** value missing **")
+        return
+    if args[0] not in my_classes:
+        print("** class doesn't exist **")
+        return
+    all_objects = storage.all()
+    for id_objects in all_objects.keys():
+        if id_objects == args[1]:
+            setattr(all_objects[id_objects], args[2], args[3])
+            storage.save()
+            return
+    print("** no instance found **")
 
 
 if __name__ == "__main__":
