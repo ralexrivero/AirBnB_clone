@@ -22,21 +22,21 @@ class FileStorage:
     __objects = {}
 
     def __init__(self):
-        """init method"""
+        """constructor metod of FileStorage class, initialize all the class attributes""" 
         self.__reload()
 
     def all(self):
-        """all method"""
+        """Reeturn dictionnary of all objects"""
         return FileStorage.__objects
 
     def new(self, obj):
-        """new method"""
+        """add objecto to the dictionnary __objects"""
         if new_obj is None:
             for new_obj in FileStorage.__objects:
                 FileStorage.__objects[new_obj] = obj
 
     def save(self):
-        """save method"""
+        """serialize and save objects from __objects to a file in json in format json"""
         dict = {}
         for i in FileStorage.__objects.keys():
             dict[i] = FileStorage.__objects[i].to_json()
@@ -44,7 +44,8 @@ class FileStorage:
             json.dump(dict, file)
  
    def reload(self):
-        """reload method"""
+        """deserialize and lode objects from the file into python objects to dictioanry __objects"""
+
         try:
             with open(self.__file_path, 'r') as file:
                 jeison = json.load(file)

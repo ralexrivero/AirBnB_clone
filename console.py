@@ -19,7 +19,18 @@ import shlex
 
 
 class HBNBCommand(cmd.Cmd):
-    """consola HBNB"""
+    """-HBNBCommand(cmd.Cmd) is a class that inherits from cmd.Cmd
+                    cmd.Cmd is methods to execute a command prompt command line interface for a Python program.
+       -prompt is a interpreter-specific string that is displayed to the user when they are ready to enter a command.
+       -classes is a list of all the classes that inherit from BaseModel.
+       -my_objects is a dictionary of all the instances of the classes in classes.
+       -my_classes oa diccionary whit the classes.
+       -storage is an instance of FileStorage.
+       -self is an instance of HBNBCommand to use the methods of the class.
+       -args is a list of arguments passed to the command.
+       -args_list is a list of arguments passed to the command."""       
+              
+               
 
     prompt = "(hbnb) "
     my_classes = {"BaseModel": BaseModel, "User": User, "State": State,
@@ -42,14 +53,24 @@ class HBNBCommand(cmd.Cmd):
         """End Of File command to exit the program"""
 
         quit()
-        
+
+    def emptyline(self, args):
+        """Do nothing on empty line"""
+        pass
+    
+    def default(self, args):
+        """Default method to execute when the command is not found"""
+        print("*** Unknown syntax: {}".format(args))
+    
     def do_create(self, args):
         """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id."""
 
         if not args:
             print("** class name missing **")
             return
-        args_list = shlex.split(args)
+        args_list = shlex.split(args) 
+        """shlex is a lexical analyser for simple shell-like syntax; 
+           and shlex.split() splits a string into a list of tokens."""
         if args_list[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
@@ -58,6 +79,7 @@ class HBNBCommand(cmd.Cmd):
         """Prints the string representation of an instance, show BaseModel 1234-1234-1234"""
 
         args = args.split()
+        """args.split() splits a string into a list of words."""
         if len(args) != 1:
             print("** class name missing **")
             return
@@ -71,6 +93,7 @@ class HBNBCommand(cmd.Cmd):
         """ Deletes an instance based on the class name and id"""
 
         args_list = shlex.split(args)
+        """args_list = shlex.split(args) splits a args_list into a list of words."""
         if args_list[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return        
@@ -94,5 +117,6 @@ class HBNBCommand(cmd.Cmd):
         """
 
 if __name__ == "__main__":
+    """__name__ is a special variable that holds the name of the current module and __main__ is the name of the
+    "main" module; if this module is being run as the main module, __name__ will be __main__."""
     HBNBCommand().cmdloop()
-
