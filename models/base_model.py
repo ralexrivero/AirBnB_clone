@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ BaseModel that defines all common attributes/methods for other classes """
-#import models
+import models
 from uuid import uuid4
 from datetime import datetime
 
@@ -33,7 +33,7 @@ class BaseModel:
                 *args: variable length argument list
                 **kwargs: key - value pairs
         """
-        self.id = str(uuid4)  # Unique id
+        self.id = str(uuid4)
         self.created_at = datetime.datetime.now()
         current datetime when instance is created
         self.updated_at = datetime.datetime.now()
@@ -61,4 +61,5 @@ class BaseModel:
         new_dict["__class__"] = self.__class__.__name__
         new_dict["created_at"] = self.created_at.isoformat()
         new_dict["updated_at"] = self.updated_at.isoformat()
+       
         return new_dict
