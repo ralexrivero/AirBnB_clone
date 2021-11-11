@@ -68,18 +68,16 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, args):
         """Creates a new instance of BaseModel, saves it (to the JSON file)
         and prints the id.\n"""
-
+        args = shlex.split(args)
         if not args:
             print("** class name missing **")
             return
-        elif args not in my_classes:
+        if args[0] not in my_classes:
             print("** class doesn't exist **")
             return
-        else:
-            new_object = eval(args)
-            """eval(args) evaluates the string args as a Python expression
-            and returns the result.
-            """
+        if args[0] in my_classes:
+            """if the args[0] is in my_classes, then the class exists"""
+            new_object = eval(args[0])()
             new_object.save()
             """save() saves the changes in the JSON file"""
             print(new_object.id)
