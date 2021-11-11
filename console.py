@@ -43,7 +43,7 @@ class HBNBCommand(cmd.Cmd):
                "Amenity", "Place", "Review"]
     # my_classes is a diccionary with the classes
     # classes is a list with the classes
-    storage.reload()
+
     """reload() reloads the JSON file"""
     show_list = []
     for items in my_classes:
@@ -72,12 +72,18 @@ class HBNBCommand(cmd.Cmd):
         if not args:
             print("** class name missing **")
             return
-        args_list = shlex.split(args)
-        """shlex is a lexical analyser for simple shell-like syntax;
-           and shlex.split() splits a string into a list of tokens."""
-        if args_list[0] not in HBNBCommand.classes:
+        elif args not in my_classes:
             print("** class doesn't exist **")
             return
+        else:
+            new_object = eval(args)
+            """eval(args) evaluates the string args as a Python expression
+            and returns the result.
+            """
+            new_object.save()
+            """save() saves the changes in the JSON file"""
+            print(new_object.id)
+            """print the id of the object"""
 
     def do_show(self, args):
         """Prints the string representation of an instance, format:
