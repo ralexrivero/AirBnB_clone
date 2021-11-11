@@ -134,6 +134,27 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """Prints all string representation of all instances
         based or not on the class name.\n"""
+        if args not in my_classes:
+            print("** class doesn't exist **")
+            return
+        elif args in HBNBCommand.classes:
+            """if the args is in HBNBCommand.classes, then the class exists"""
+            all_objects = {key: value for (key , value) in models.storage.all().items()
+                           if isinstance(value, my_classes[args])}
+            """isinstace is a function that checks if the object is an instance
+            of the class or of a subclass of the class"""
+        elif len(args) == 0:
+            all_objects = models.storage.all()
+            """all_objects is a dictionary with the key and value of the
+            dictionary"""
+        else:
+            return
+        for id_objects in all_objects.keys():
+            """for id_objects in all_objects.keys() is a loop that
+            iterates over the keys of the dictionary"""
+            print(all_objects[id_objects])
+            """print(all_objects[id_objects]) prints the string representation
+            of the object"""   
 
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
