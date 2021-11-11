@@ -33,7 +33,7 @@ class FileStorage:
 
     def new(self, obj):
         """add object to the dictionnary __objects"""
-        if new_obj is None:
+        if obj is None:
             for new_obj in FileStorage.__objects:
                 """this for loop utilise a new_obj to run
                     the loop for each object in the dictionnary"""
@@ -41,17 +41,17 @@ class FileStorage:
 
     def save(self):
         """serialize and save objects from __objects to a file in json in format json"""
-        dict = {}
-        """dict is an empty dictionnary"""
+        dictionary = {}
+        """dicttionary is an empty dictionnary"""
         for key, value in FileStorage.__objects.items():
                 """this for loop utilise a key and valiu to run 
                 FileStorage.__objects.items() and create a dictioanry of key and value"""
-        dict[key] = value.to_dict()
+                dictionary[key] = value.to_dict()
         """dict[key] is equal to value.__dict__"""
         with open(self.__file_path, 'w') as f:
                 """open(self.__file_path, 'w') open the json file in write mode"""
-        json.dump(dict, f)
-        """dump(dict, f) dump the dictionnary dict in the file f"""
+                json.dump(dictionary, f)
+                """dump(dictionary, f) dump the dictionnary dictionary in the file f"""
     
     def reload(self):
         """deserialize and lode objects from the file into python objects to dictioanry __objects"""
