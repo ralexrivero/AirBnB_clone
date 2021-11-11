@@ -19,30 +19,35 @@ import shlex
 """ 6. Console 0.0.1 """
 
 my_classes = {"BaseModel": BaseModel, "User": User, "State": State,
-                   "City": City, "Amenity": Amenity, "Place": Place, "Review": Review}
+              "City": City, "Amenity": Amenity,
+              "Place": Place, "Review": Review}
+
+
 class HBNBCommand(cmd.Cmd):
     """-HBNBCommand(cmd.Cmd) is a class that inherits from cmd.Cmd
-                    cmd.Cmd is methods to execute a command prompt command line interface for a Python program.
-       -prompt is a interpreter-specific string that is displayed to the user when they are ready to enter a command.
+                    cmd.Cmd is methods to execute a command prompt command
+                    line interface for a Python program.
+       -prompt is a interpreter-specific string that is displayed to the user
+       when they are ready to enter a command.
        -classes is a list of all the classes that inherit from BaseModel.
-       -my_objects is a dictionary of all the instances of the classes in classes.
+       -my_objects is a dictionary of all the instances of the classes
+       in classes.
        -my_classes oa diccionary whit the classes.
        -storage is an instance of FileStorage.
        -self is an instance of HBNBCommand to use the methods of the class.
        -args is a list of arguments passed to the command.
-       -args_list is a list of arguments passed to the command."""       
-              
-               
+       -args_list is a list of arguments passed to the command."""
 
-    prompt = "(hbnb) "
-    classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
+    prompt = '(hbnb) '
+    classes = ["BaseModel", "User", "State", "City",
+               "Amenity", "Place", "Review"]
     # my_classes is a diccionary with the classes
     # classes is a list with the classes
 
     show_list = []
     for items in my_classes:
-         show_list.append(items)
-    instances = ["do_show", "do_destroy", "do_all", "do_update"] 
+        show_list.append(items)
+    instances = ["do_show", "do_destroy", "do_all", "do_update"]
 
     def do_quit(self, args):
         """Quit command to exit the program.\n"""
@@ -58,22 +63,24 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing on empty line\n"""
 
         pass
-    
+
     def do_create(self, args):
-        """Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id.\n"""
+        """Creates a new instance of BaseModel, saves it (to the JSON file)
+        and prints the id.\n"""
 
         if not args:
             print("** class name missing **")
             return
-        args_list = shlex.split(args) 
-        """shlex is a lexical analyser for simple shell-like syntax; 
+        args_list = shlex.split(args)
+        """shlex is a lexical analyser for simple shell-like syntax;
            and shlex.split() splits a string into a list of tokens."""
         if args_list[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
 
     def do_show(self, args):
-        """Prints the string representation of an instance, format: show <class name> <id>.\n"""
+        """Prints the string representation of an instance, format:
+        show <class name> <id>.\n"""
 
         args_list = shlex.split(args)
         """args_list is a list of arguments passed to the command
@@ -94,7 +101,6 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     print("** no instance found **")
 
-        
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id.\n"""
 
@@ -108,7 +114,8 @@ class HBNBCommand(cmd.Cmd):
         elif args_list[0]in my_classes:
             """if the args_list[0] is in my_classes, then the class exists"""
             if len(args_list) > 1:
-                """if the lenght of args_list is greater than 1, then the id is passed"""
+                """if the lenght of args_list is greater than 1,
+                then the id is passed"""
                 key = args_list[0] + "." + args_list[1]
                 """key = args_list[0] + "." + args_list[1]
                     key is the key to search in the dictionary"""
@@ -124,16 +131,19 @@ class HBNBCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
 
-    
     def do_all(self, args):
-        """Prints all string representation of all instances based or not on the class name.\n"""
+        """Prints all string representation of all instances
+        based or not on the class name.\n"""
 
     def do_update(self, args):
-        """Updates an instance based on the class name and id by adding or updating attribute
-        (save the change into the JSON file).\n"""
+        """Updates an instance based on the class name and id by adding or
+        updating attribute (save the change into the JSON file).\n"""
+
 
 if __name__ == "__main__":
-    """__name__ is a special variable that holds the name of the current module and __main__ is the name of the
-    "main" module; if this module is being run as the main module, __name__ will be __main__."""
+    """__name__ is a special variable that holds the name of the current
+    module and __main__ is the name of the "main" module; if this module
+    is being run as the main module, __name__ will be __main__."""
     HBNBCommand().cmdloop()
-    """cmdloop() is a method that runs a command prompt command line interface for a Python program."""
+    """cmdloop() is a method that runs a command prompt command line interface
+    for a Python program."""
