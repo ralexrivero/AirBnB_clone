@@ -120,7 +120,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
             return
         else:
-            print("[{}] ({}) {}".format(args_list[0], new_object[1], models.storage.all()[new_object]))
+            print("[{}] ({}) {}".format(args_list[0], new_object[1],
+                  models.storage.all()[new_object]))
             """print the object in format [class name] (id) object"""
 
     def do_destroy(self, args):
@@ -132,7 +133,7 @@ class HBNBCommand(cmd.Cmd):
         if len(args_list) == 0:
             print("** class name missing **")
             return
-        elif args_list[0]in my_classes:
+        elif args_list[0] in my_classes:
             """if the args_list[0] is in my_classes, then the class exists"""
             if len(args_list) > 1:
                 """if the lenght of args_list is greater than 1,
@@ -166,16 +167,17 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         if args in self.classes:
-            for key , value in new_object.items():
+            for key, value in new_object.items():
                 """for key, value in new_object.items()
                     key is the key of the dictionary
                     value is the value of the dictionary, new_object.items is a
-                    generator that returns the key and value of the dictionary"""                
+                    generator that returns the key-value of the dictionary"""
                 if args in key:
                     """if args is in key, then the class exists"""
                     toke_key = key.split(".")
                     """toke_key is a list with the class name and the id"""
-                    key_new = "[" + toke_key[0] + "]" + " (" + toke_key[1] + ")"
+                    key_new = "[" + toke_key[0] + "]"
+                    + " (" + toke_key[1] + ")"
                     list_objects.append(key_new + " " + str(value))
                     """list_objects.append(key_new + " " + str(value))
                         list_objects is a list with the objects in format
@@ -229,6 +231,7 @@ class HBNBCommand(cmd.Cmd):
                     counter += 1
                     """counter += 1 is a function that adds 1 to the counter"""
             print(counter)
+
 
 if __name__ == "__main__":
     """__name__ is a special variable that holds the name of the current
