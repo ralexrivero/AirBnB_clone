@@ -91,20 +91,25 @@ class HBNBCommand(cmd.Cmd):
         """args_list is a list of arguments passed to the command
               shlex is a lexical analyser for simple shell-like syntax;
                 and shlex.split() splits a string into a list of tokens."""
-        if len(args_list) == 0:
+        if not args:
             print("** class name missing **")
             return
-        if args_list[0] not in my_classes:
+        elif args_list[0] not in my_classes:
             print("** class doesn't exist **")
+            return
+        elif len(args_list) == 1:
+            print("** instance id missing **")
+            return
+        new_object = "{}.{}".format(args_list[0], args_list[1])
+        """new_object is a string that is the class name an the id"""
+        if new_object not in models.storage.all().keys():
+            """if the new_object is not in the dictionary,
+            then the object doesn't exist"""
+            print("** no instance found **")
+            return
         else:
-            if len(args_list) == 1:
-                print("** instance id missing **")
-            else:
-                key = args_list[0] + "." + args_list[1]
-                if key in models.storage.all():
-                    print(models.storage.all()[key])
-                else:
-                    print("** no instance found **")
+            print("[{}] ({}) {}".format(args_list[0], new_object[1], models.storage.all()[new_object]))
+            """print the object in format [class name] (id) object"""
 
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id.\n"""
@@ -191,6 +196,24 @@ class HBNBCommand(cmd.Cmd):
                 return
         print("** no instance found **")
 
+    def do_count(self, args):
+        """counts the number of instances of a class\n"""
+        counter = 0
+        my_objects = models.storage.all()
+        """my_objects is a dictionary with the key and value of the
+             dictionary"""
+        if args in self.classes:
+            for key in my_objects.keys():
+                """for key in my_objects.keys() is a loop that
+                iterates over the keys of the dictionary"""
+                find_class = key.split(".")
+                """find_class is a list of the key split by "." """
+                if find_class[0] == args:
+                    """if find_class[0] == args, then the class name
+                    is the same as the args"""
+                    counter += 1
+                    """counter += 1 is a function that adds 1 to the counter"""
+            print(counter)
 
 if __name__ == "__main__":
     """__name__ is a special variable that holds the name of the current
