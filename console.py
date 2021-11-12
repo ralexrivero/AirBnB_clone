@@ -2,6 +2,7 @@
 """
 Console for object management and storage persistant
 """
+from types import ClassMethodDescriptorType
 import models
 from models.base_model import BaseModel
 from models.user import User
@@ -144,27 +145,31 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, args):
         """Prints all string representation of all instances
         based or not on the class name.\n"""
-        if args not in my_classes:
+
+        new_object = models.storage.all()
+        """new_object is a dictionary with all the objects"""
+        list_objects = []
+        """list_objects is a list with all the objects"""
+        if args and args not in my_classes:
+            """if args is not empty and args is not in my_classes,
+            then the class doesn't exist"""
             print("** class doesn't exist **")
             return
-        elif args in HBNBCommand.classes:
-            """if the args is in HBNBCommand.classes, then the class exists"""
-            all_objects = {key: value for (key , value) in models.storage.all().items()
-                           if isinstance(value, my_classes[args])}
-            """isinstace is a function that checks if the object is an instance
-            of the class or of a subclass of the class"""
-        elif len(args) == 0:
-            all_objects = models.storage.all()
-            """all_objects is a dictionary with the key and value of the
-            dictionary"""
-        else:
-            return
-        for id_objects in all_objects.keys():
-            """for id_objects in all_objects.keys() is a loop that
-            iterates over the keys of the dictionary"""
-            print(all_objects[id_objects])
-            """print(all_objects[id_objects]) prints the string representation
-            of the object"""   
+        if args in self.classes:
+            for key , value in new_object.items():
+                """for key, value in new_object.items()
+                    key is the key of the dictionary
+                    value is the value of the dictionary, new_object.items is a
+                    generator that returns the key and value of the dictionary"""                
+                if args in key:
+                    """if args is in key, then the class exists"""
+                    toke_key = key.split(".")
+                    """toke_key is a list with the class name and the id"""
+                    key_new = "[" + toke_key[0] + "]" + " (" + toke_key[1] + ")"
+                    list_objects.append(key_new + " " + str(value))
+                    """list_objects.append(key_new + " " + str(value))
+                        list_objects is a list with the objects in format
+                        [class name] (id) object"""
 
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
