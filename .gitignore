@@ -1,4 +1,7 @@
 
+# file storage
+*.json
+
 # internal comments
 dontread.txt
 
