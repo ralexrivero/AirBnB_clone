@@ -46,7 +46,7 @@ class HBNBCommand(cmd.Cmd):
     # classes is a list with the classes
 
     """reload() reloads the JSON file"""
-    show_list = []
+    show_list = ()]
     for items in my_classes:
         show_list.append(items)
     instances = ["do_show", "do_destroy", "do_all", "do_update"]
@@ -66,16 +66,16 @@ class HBNBCommand(cmd.Cmd):
 
         pass
     
-    def do_default(self, args):
+    def default(self, args):
         """default method to execute the command"""
 
-        args = args.replace('(', '').replace(')', '').replace('.', '')
-        args = args.replace('.', '').replace('"', '').replace('"', '')
-        list_args = args.split(" ")
+        arg = args.replace('(', '').replace(')', '').replace('.', '')
+        arg = args.replace('.', '').replace('"', '').replace('"', '')
+        list_args = arg.split(" ")
         list_args.remove("")
         if len(list_args) > 1:
             cmd_args = split.args[1]
-            args.remove(cmd_args)
+            arg.remove(cmd_args)
         if cmd_args == 
     def do_create(self, args):
         """Creates a new instance of BaseModel, saves it (to the JSON file)
