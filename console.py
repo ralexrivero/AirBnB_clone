@@ -65,7 +65,18 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing on empty line\n"""
 
         pass
+    
+    def do_default(self, args):
+        """default method to execute the command"""
 
+        args = args.replace('(', '').replace(')', '').replace('.', '')
+        args = args.replace('.', '').replace('"', '').replace('"', '')
+        list_args = args.split(" ")
+        list_args.remove("")
+        if len(list_args) > 1:
+            cmd_args = split.args[1]
+            args.remove(cmd_args)
+        if cmd_args == 
     def do_create(self, args):
         """Creates a new instance of BaseModel, saves it (to the JSON file)
         and prints the id.\n"""
@@ -114,7 +125,6 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id.\n"""
-
         args_list = shlex.split(args)
         """args_list is a list of arguments passed to the command
                 shlex is a lexical analyser for simple shell-like syntax;
