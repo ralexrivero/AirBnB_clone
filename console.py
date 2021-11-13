@@ -66,8 +66,8 @@ class HBNBCommand(cmd.Cmd):
 
         pass
     
-    def default(self, args):
-        """default method to execute the command"""
+    """def default(self, args):
+        """default method to execute the command
 
         arg = args.replace('(', '').replace(')', '').replace('.', '')
         arg = args.replace('.', '').replace('"', '').replace('"', '')
@@ -76,7 +76,8 @@ class HBNBCommand(cmd.Cmd):
         if len(list_args) > 1:
             cmd_args = split.args[1]
             arg.remove(cmd_args)
-        if cmd_args == 
+        if cmd_args == """
+
     def do_create(self, args):
         """Creates a new instance of BaseModel, saves it (to the JSON file)
         and prints the id.\n"""
