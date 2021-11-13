@@ -85,4 +85,3 @@ class FileStorage:
                         with the class name of new_object and its value"""
         except:
             pass
-        """except is used to catch the error if the file is empty"""
