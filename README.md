@@ -31,7 +31,9 @@ Team project to build a clone of [AirBnB](https://www.airbnb.com/).
 
 The console is a command interpreter to manage objects abstraction between objects and how they are stored.
 
-To see the fundamental background of the project visit the [Wiki](/wiki/AirBnB_clone).
+To see the fundamental background of the project visit the [Wiki](blob/main/wiki/AirBnB_clone).
+
+The console willl perform the following tasks:
 
 * create a new object
 * retrive an object from a file
@@ -150,21 +152,38 @@ echo "python3 -m unittest discover tests" | bash
 
 ## 0x05 Usage
 
-List of commands and examples usage:
+* Start the console in interactive mode:
 
-The prompt (hbnb) waits for a command in an infinite loop.
+```bash
+$ ./console.py
+(hbnb)
+```
 
-* ```help```
+* Use help to see the available commands:
 
-example:
+```bash
+(hbnb) help
 
-* ```quit```
+Documented commands (type help <topic>):
+========================================
+EOF  all  count  create  destroy  help  quit  show  update
 
-example:
+(hbnb) 
+```
+
+* Quit the console:
+```bash
+(hbnb) quit
+$
+```
 
 ## 0x06 License
 
+This project is under the Apache 2.0 license.
+
 ## 0x07 Contributing
+
+This is a team project for practice and learning purposes. Contribution is welcome and encouraged.
 
 ## 0x08 Todo
 
@@ -177,6 +196,11 @@ example:
 ## 0x0C Conclusion
 
 ## 0x0D References
+
+https://www.w3schools.com/python/python_modules.asp
+https://docs.python.org/3.4/tutorial/modules.html#packages
+https://docs.python.org/3/library/unittest.html
+https://developers.google.com/edu/python
 
 ## 0x0E Acknowledgements
 
