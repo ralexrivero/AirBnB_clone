@@ -34,37 +34,38 @@ class FileStorage:
         self.__objects[key] = obj
 
     def save(self):
-        """serialize and save objects from __objects to a file
-        in json in format json"""
+        """serializes __objects to the JSON file (path: __file_path)
+            dicttionary: an empty dictionnary
+                Open the dictionary in write mode
+                dump the dictionary in the file f
+        """
         dictionary = {}
-        """dicttionary is an empty dictionnary"""
-        for key, value in FileStorage.__objects.items():
-            dictionary[key] = value.to_dict()
-        """dict[key] is equal to value.__dict__"""
         with open(self.__file_path, 'w') as f:
-            """open(self.__file_path, 'w') open the json file in write mode"""
+            for obj in self.__objects.values():
+                key = obj.__class__.__name__ + "." + obj.id
+                dictionary[key] = obj.to_dict()
             json.dump(dictionary, f)
-            """dump(dictionary, f) dump the dictionnary in the file f"""
 
     def reload(self):
-        """deserialize and lode objects from the file into python
-        objects to dictionary __objects"""
+        """deserializes the JSON file to __objects
+        (only if the JSON file (__file_path) exists
+        otherwise, do nothing.
+        If the file doesn’t exist, no exception should be raised)
+            Open in read mode"
+            load the file f and read it
+            """
         try:
             with open(self.__file_path, 'r') as f:
-                """open( self.__file_path, 'r') open the json file
-                in read mode"""
                 my_dict = json.load(f)
-                """load(f.read) load the file f and read it"""
             for key, value in my_dict.items():
-                """this for loop utilise a key and valiu to run
-                    my_dict.items() and create a dictioanry of key and value"""
+                """this for loop utilise a key value pair to run
+                    my_dict.items() and create a dictionary of key and value"""
                 new_object = key.split('.')
                 class_name = new_object[0]
                 """new_object is equal to key.split('.')[0]
                     this split the key and take the first part of the key"""
-                if new_object in classes:
-                    self.__objects[key] = classes[new_object](**value)
-                    """this if statement is used to create a new object
-                        with the class name of new_object and its value"""
+                self.new(eval("{}".format(class_name))(**value))
+                """this if statement is used to create a new object
+                    with the class name of new_object and its value"""
         except FileNotFoundError:
             pass
