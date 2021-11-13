@@ -4,29 +4,26 @@ from uuid import uuid4
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """Base class for all models"""
 
     def __init__(self, *args, **kwargs):
         """ instantiates a new object
             Args:
-                *args: unused
+                *args: variable length argument list
                 **kwargs: (key - value) pair of attributes 
             """
 
-        if len(args) > 0:
-            for i in args[0]:
-                setattr(self, i, args[0][i])
-                """setattr is a function that takes two arguments:
-                the name of the attribute to be set and the value to be
-                assigned to it.
-                """
-        else:
-            self.created_at = datetime.now()
+        if not kwargs:
             self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
+        else:
+            kwargs['updated_at'] = datetime.now()
+            kwargs['created_at'] = datetime.now()
 
-        for i in kwargs:
-            print("kwargs: {}: {}".format(i, kwargs[i]))
 
     def __str__(self):
         """ Returns a string representation of the object """
