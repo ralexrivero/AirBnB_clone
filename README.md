@@ -48,16 +48,20 @@ All the development and testing was runned over an operating system Ubuntu 20.04
 
 ## 0x03 Installation
 
-```git clone https://github.com/ralexrivero/AirBnB_clone.git```
+```bash
+git clone https://github.com/ralexrivero/AirBnB_clone.git
+```
 
 change to the `AirBnb` directory and run the command:
 
-``` ./console.py ```
+```bash
+ ./console.py
+```
 ### Execution
 
 In interactive mode
 
-```
+```bash
 $ ./console.py
 (hbnb) help
 
@@ -73,7 +77,7 @@ $
 
 in Non-interactive mode
 
-```
+```bash
 $ echo "help" | ./console.py
 (hbnb)
 
@@ -94,28 +98,48 @@ EOF  help  quit
 (hbnb) 
 $
 ```
+
 ## 0x04 Testing
 
 ### Documentation
 
-- Modules: ```python3 -c 'print(__import__("my_module").__doc__)'```
-- Classes: ```python3 -c 'print(__import__("my_module").MyClass.__doc__)'```
-- Functions (inside and outside a class): ```python3 -c 'print(__import__("my_module").my_function.__doc__)'```
-and ```python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'```
+* Modules:
+
+```python
+python3 -c 'print(__import__("my_module").__doc__)'
+```
+
+* Classes:
+
+```python
+python3 -c 'print(__import__("my_module").MyClass.__doc__)'
+```
+
+* Functions (inside and outside a class):
+
+```python
+python3 -c 'print(__import__("my_module").my_function.__doc__)'
+```
+
+and
+
+```python
+python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
+```
 
 ### Python Unit Tests
 
-- unittest module
-- File extension ``` .py ```
-- Files and folders star with ```test_```
-- Organization:for ```models/base.py```, unit tests in: ```tests/test_models/test_base.py```
-- Execution command: ```python3 -m unittest discover tests```
-- or: ```python3 -m unittest tests/test_models/test_base.py```
+* unittest module
+* File extension ``` .py ```
+* Files and folders star with ```test_```
+* Organization:for ```models/base.py```, unit tests in: ```tests/test_models/test_base.py```
+* Execution command: ```python3 -m unittest discover tests```
+* or: ```python3 -m unittest tests/test_models/test_base.py```
 
 ### run test in interactive mode
 
-```
-$ echo "python3 -m unittest discover tests" | bash
+```bash
+echo "python3 -m unittest discover tests" | bash
 ```
 
 ## 0x05 Usage
@@ -124,11 +148,11 @@ List of commands and examples usage:
 
 The prompt (hbnb) waits for a command in an infinite loop.
 
-- help
+* ```help```
 
 example:
 
-- quit
+* ```quit```
 
 example:
 
