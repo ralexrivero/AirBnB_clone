@@ -47,6 +47,7 @@ class HBNBCommand(cmd.Cmd):
 
     """reload() reloads the JSON file"""
     show_list = [()]
+
     for items in my_classes:
         show_list.append(items)
     instances = ["do_show", "do_destroy", "do_all", "do_update"]
