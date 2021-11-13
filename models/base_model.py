@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
 """ BaseModel that defines all common attributes/methods for other classes """
-import models
 from uuid import uuid4
 from datetime import datetime
-
+import models
 
 class BaseModel:
     """Base class for all models"""
 
     def __init__(self, *args, **kwargs):
-        """ instantiates a new object """
+        """ instantiates a new object
+            Args:
+                *args: unused
+                **kwargs: (key - value) pair of attributes 
+            """
 
         if len(args) > 0:
             for i in args[0]:
@@ -18,9 +21,7 @@ class BaseModel:
                 the name of the attribute to be set and the value to be
                 assigned to it.
                 """
-
         else:
-
             self.created_at = datetime.now()
             self.id = str(uuid4())
 
@@ -35,7 +36,6 @@ class BaseModel:
     def save(self):
         """ updates the public instance attribute
         updated_at with current time"""
-        from models.base_model import BaseModel
         self.updated_at = datetime.now()
         models.storage.save()
 
@@ -43,10 +43,8 @@ class BaseModel:
         """ Returns a dictionary containing all keys/values of __dict__
         of the instance
         """
-        from models.base_model import BaseModel
         new_dict = dict(self.__dict__)
         new_dict["__class__"] = self.__class__.__name__
         new_dict["created_at"] = self.created_at.isoformat()
         new_dict["updated_at"] = self.updated_at.isoformat()
-
         return new_dict
