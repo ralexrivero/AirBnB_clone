@@ -20,6 +20,7 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
+            models.storage.save()
         else:
             kwargs['updated_at'] = datetime.now()
             kwargs['created_at'] = datetime.now()
