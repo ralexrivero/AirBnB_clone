@@ -40,13 +40,10 @@ class HBNBCommand(cmd.Cmd):
        -args_list is a list of arguments passed to the command."""
 
     prompt = '(hbnb) '
-    classes = ["BaseModel",
-               "User",
-               "State",
-               "City",
-               "Amenity",
-               "Place",
-               "Review"]
+    classes = ["BaseModel", "User", "State", "City",
+               "Amenity", "Place", "Review"]
+    # my_classes is a diccionary with the classes
+    # classes is a list with the classes
 
     """reload() reloads the JSON file"""
     show_list = [()]
