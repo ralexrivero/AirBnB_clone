@@ -172,6 +172,7 @@ EOF  all  count  create  destroy  help  quit  show  update
 ```
 
 * Quit the console:
+
 ```bash
 (hbnb) quit
 $
@@ -186,6 +187,8 @@ This project is under the Apache 2.0 license.
 This is a team project for practice and learning purposes. Contribution is welcome and encouraged.
 
 ## 0x08 Todo
+
+* improve the wikipages
 
 ## 0x09 Changelog
 
