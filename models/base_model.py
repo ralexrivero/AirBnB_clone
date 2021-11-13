@@ -11,7 +11,7 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """ instantiates a new object
             Args:
-                *args: variable length argument list
+                *args: variable length argument list not used
                 **kwargs: (key - value) pair of attributes 
             """
 
@@ -23,7 +23,8 @@ class BaseModel:
         else:
             kwargs['updated_at'] = datetime.now()
             kwargs['created_at'] = datetime.now()
-
+            self.id = kwargs['id']
+            self.__dict__.update(kwargs)
 
     def __str__(self):
         """ Returns a string representation of the object """
