@@ -67,7 +67,7 @@ class HBNBCommand(cmd.Cmd):
         pass
     
     """def default(self, args):
-        """default method to execute the command
+        default method to execute the command
 
         arg = args.replace('(', '').replace(')', '').replace('.', '')
         arg = args.replace('.', '').replace('"', '').replace('"', '')
