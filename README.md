@@ -31,7 +31,7 @@ Team project to build a clone of [AirBnB](https://www.airbnb.com/).
 
 The console is a command interpreter to manage objects abstraction between objects and how they are stored.
 
-To see the fundamental background of the project visit the [Wiki](blob/main/wiki/AirBnB_clone).
+To see the fundamental background of the project visit the [Wiki](/wiki).
 
 The console willl perform the following tasks:
 
