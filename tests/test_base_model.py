@@ -10,7 +10,7 @@ import pycodestyle
 import unittest
 from unittest import mock
 
-BaseModel = models.base_model.BaseModel
+from models.base_model import BaseModel
 docs = models.base_model.__doc__
 
 
