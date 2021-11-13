@@ -20,13 +20,9 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
-            models.storage.save()
         else:
             kwargs['updated_at'] = datetime.now()
-            kwargs['created_at'] = datetime.now()
-            self.id = kwargs['id']
-            del kwargs['__class__']
-            self.__dict__.update(kwargs)
+
 
     def __str__(self):
         """ Returns a string representation of the object """
