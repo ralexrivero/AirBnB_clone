@@ -238,6 +238,6 @@ if __name__ == "__main__":
     """__name__ is a special variable that holds the name of the current
     module and __main__ is the name of the "main" module; if this module
     is being run as the main module, __name__ will be __main__."""
-HBNBCommand().cmdloop()
-"""cmdloop() is a method that runs a command prompt command line interface
-for a Python program."""
+    HBNBCommand().cmdloop()
+    """cmdloop() is a method that runs a command prompt command line interface
+    for a Python program."""
