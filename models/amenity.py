@@ -6,10 +6,14 @@ from models.base_model import BaseModel
 class Amenity(BaseModel):
     """ Class Amenity that inherits BaseModel
         Public class attribute
-            name: string - empty string
+            name: (str) - amenity name
     """
     name = ""
 
     def __init__(self, *args, **kwargs):
-        """ Initialize Amenity """
+        """ Initialize Amenity
+            Args:
+                *args: list of strings
+                **kwargs: dictionary of strings
+        """
         super().__init__(*args, **kwargs)

@@ -6,12 +6,15 @@ from models.base_model import BaseModel
 class City(BaseModel):
     """ Class City that inherits BaseModel
         Public class attribute
-            state_id: string - empty string: it will be the State.id
-            name: string - empty string
+            state_id: (str) - State.id
+            name: (str) - City name
     """
     state_id = ""
     name = ""
 
     def __init__(self, *args, **kwargs):
-        """ Initialize City """
+        """ Initialize City
+            Args:
+                *args: list of strings
+                **kwargs: dictionary of strings"""
         super().__init__(*args, **kwargs)

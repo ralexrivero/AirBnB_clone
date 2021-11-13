@@ -6,7 +6,7 @@ from models.base_model import BaseModel
 class State(BaseModel):
     """ Class place that inherits from BaseModel
         Public class attributes:
-            name: string - empty string
+            name: (str) - Name of the state
     """
     name = ""
 

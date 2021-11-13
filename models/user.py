@@ -6,10 +6,10 @@ from models.base_model import BaseModel
 class User(BaseModel):
     """ Class user that inherits from BaseModel
         Public class attributes:
-            email: string - empty string
-            password: string - empty string
-            first_name: string - empty string
-            last_name: string - empty string
+            email: (str) - user's email
+            password: (str) - user's password
+            first_name: (str) - user's first name
+            last_name: (str) - user's last name
     """
     email = ""
     password = ""
@@ -17,5 +17,9 @@ class User(BaseModel):
     last_name = ""
 
     def __init__(self, *args, **kwargs):
-        """ Initialize class User """
+        """ Initialize class User
+            Args:
+                *args: list of strings
+                **kwargs: dictionary of strings
+                """
         super().__init__(*args, **kwargs)
