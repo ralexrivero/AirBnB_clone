@@ -46,7 +46,7 @@ class HBNBCommand(cmd.Cmd):
     # classes is a list with the classes
 
     """reload() reloads the JSON file"""
-    show_list = ()]
+    show_list = [()]
     for items in my_classes:
         show_list.append(items)
     instances = ["do_show", "do_destroy", "do_all", "do_update"]
@@ -65,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing on empty line\n"""
 
         pass
-    
+
     """def default(self, args):
         default method to execute the command
 
@@ -238,6 +238,6 @@ if __name__ == "__main__":
     """__name__ is a special variable that holds the name of the current
     module and __main__ is the name of the "main" module; if this module
     is being run as the main module, __name__ will be __main__."""
-    HBNBCommand().cmdloop()
-    """cmdloop() is a method that runs a command prompt command line interface
-    for a Python program."""
+HBNBCommand().cmdloop()
+"""cmdloop() is a method that runs a command prompt command line interface
+for a Python program."""
