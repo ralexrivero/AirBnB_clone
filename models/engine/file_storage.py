@@ -83,6 +83,3 @@ class FileStorage:
                     self.__objects[key] = classes[new_object](**value)
                     """this if statement is used to create a new object
                         with the class name of new_object and its value"""
-        except:
-            pass
-        """except is used to catch the error if the file is empty"""
