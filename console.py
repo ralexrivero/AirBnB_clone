@@ -57,17 +57,14 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, args):
         """Quit command to exit the program.\n"""
-
         quit()
 
     def do_EOF(self, args):
-        """End Of File command to exit the program\n"""
-
+        """End Of File command to exit the program"""
         quit()
 
     def emptyline(self):
         """Do nothing on empty line\n"""
-
         pass
 
     """def default(self, args):
@@ -83,8 +80,9 @@ class HBNBCommand(cmd.Cmd):
         if cmd_args == """
 
     def do_create(self, args):
-        """Creates a new instance of BaseModel, saves it (to the JSON file)
-        and prints the id.\n"""
+        """Creates a new instance of BaseModel \
+saves it (to the JSON file) and prints the id.
+        """
         args = shlex.split(args)
         if not args:
             print("** class name missing **")
@@ -102,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance, format:
-        show <class name> <id>.\n"""
+        show <class name> <id>."""
 
         args_list = shlex.split(args)
         """args_list is a list of arguments passed to the command
@@ -130,7 +128,7 @@ class HBNBCommand(cmd.Cmd):
             """print the object in format [class name] (id) object"""
 
     def do_destroy(self, args):
-        """ Deletes an instance based on the class name and id.\n"""
+        """Deletes an instance based on the class name and id."""
         args_list = shlex.split(args)
         """args_list is a list of arguments passed to the command
                 shlex is a lexical analyser for simple shell-like syntax;
@@ -160,7 +158,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """Prints all string representation of all instances
-        based or not on the class name.\n"""
+        based or not on the class name."""
 
         new_object = models.storage.all()
         """new_object is a dictionary with all the objects"""
@@ -191,7 +189,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
-        updating attribute (save the change into the JSON file).\n"""
+        updating attribute (save the change into the JSON file)."""
         args = args.split()
         if len(args) == 0:
             print("** class name missing **")
@@ -220,7 +218,7 @@ class HBNBCommand(cmd.Cmd):
         print("** no instance found **")
 
     def do_count(self, args):
-        """counts the number of instances of a class\n"""
+        """counts the number of instances of a class"""
         counter = 0
         my_objects = models.storage.all()
         """my_objects is a dictionary with the key and value of the
@@ -240,9 +238,4 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    """__name__ is a special variable that holds the name of the current
-    module and __main__ is the name of the "main" module; if this module
-    is being run as the main module, __name__ will be __main__."""
     HBNBCommand().cmdloop()
-    """cmdloop() is a method that runs a command prompt command line interface
-    for a Python program."""
