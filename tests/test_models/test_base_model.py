@@ -64,5 +64,14 @@ class test_BaseModel_instantiation(unittest.TestCase):
         bm2 = BaseModel()
         self.assertNotEqual(bm1.created_at, bm2.created_at)
 
+###############################################################################
+# test_BaseModel_str
+###############################################################################
+
+    def test_BaseModel_str(self):
+        """ test str method """
+        bm = BaseModel()
+        self.assertEqual(type(str(bm)), str)
+
 if __name__ == "__main__":
     unittest.main()
