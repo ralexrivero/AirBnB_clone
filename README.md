@@ -178,6 +178,37 @@ EOF  all  count  create  destroy  help  quit  show  update
 $
 ```
 
+### Commands
+
+The commands are displayed in the following format *Command / usage / example with output*
+
+* Create
+
+*Creates a new instance of a given class. The class' ID is printed and the instance is saved to the file file.json.*
+
+```bash
+create <class>
+
+```
+
+```bash
+(hbnb) create BaseModel
+6cfb47c4-a434-4da7-ac03-2122624c3762
+(hbnb) 
+```
+
+* Show
+
+```bash
+show <class> <id>
+```
+
+```bash
+(hbnb) show BaseModel 6cfb47c4-a434-4da7-ac03-2122624c3762
+[BaseModel] (a) [BaseModel] (6cfb47c4-a434-4da7-ac03-2122624c3762) {'id': '6cfb47c4-a434-4da7-ac03-2122624c3762', 'created_at': datetime.datetime(2021, 11, 14, 3, 28, 45, 571360), 'updated_at': datetime.datetime(2021, 11, 14, 3, 28, 45, 571389)}
+(hbnb) 
+```
+
 ## 0x06 License
 
 This project is under the Apache 2.0 license.
@@ -201,9 +232,13 @@ This is a team project for practice and learning purposes. Contribution is welco
 ## 0x0D References
 
 https://www.w3schools.com/python/python_modules.asp
+
 https://docs.python.org/3.4/tutorial/modules.html#packages
+
 https://docs.python.org/3/library/unittest.html
+
 https://developers.google.com/edu/python
+
 
 ## 0x0E Acknowledgements
 
