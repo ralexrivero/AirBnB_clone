@@ -41,5 +41,11 @@ class testUser(unittest.TestCase):
         string = "[User] ({}) {}".format(user.id, user.__dict__)
         self.assertEqual(user.__str__(), string)
 
+    def test_save(self):
+        """ checks if it saves correctly """
+        user = User()
+        user.save()
+        self.assertNotEqual(user.created_at, user.updated_at)
+
 if __name__ == '__main__':
     unittest.main()
