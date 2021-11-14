@@ -182,7 +182,7 @@ saves it (to the JSON file) and prints the id.
                     """list_objects.append(key_new + " " + str(value))
                         list_objects is a list with the objects in format
                         [class name] (id) object"""
-                    print(list_objects)
+                    print(toke_key)
 
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
