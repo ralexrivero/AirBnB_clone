@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 """
-Unitest 
+Unitest
 
 Unittest classes:
-    
-    """
 
+    """
