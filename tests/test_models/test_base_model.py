@@ -108,6 +108,15 @@ class Test_BaseModel_str(unittest.TestCase):
         bm = BaseModel()
         self.assertEqual(type(str(bm)), str)
 
+    def test_BaseModel_add_attr(self):
+        """ test to_dict if contains added attributes """
+        bm = BaseModel()
+        bm.name = "Ronald"
+        bm.my_number = 41
+        self.assertIn("name", bm.to_dict())
+        self.assertIn("my_number", bm.to_dict())
+
+
 
 if __name__ == "__main__":
     unittest.main()
