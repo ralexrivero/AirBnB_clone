@@ -1,59 +1,35 @@
 #!/usr/bin/python3
-""" testing for BaseModel class
-    documentation and behavior
+""" unittest for models/base_model.py
+
+    test classes:
+        test_BaseModel_instantiation
+        test_BaseModel_save
+        test_BaseModel_to_dict
+        test_BaseModel_str
 """
-
-from datetime import datetime
-import inspect
 import models
-import pycodestyle
 import unittest
-from unittest import mock
-
+from datetime import datetime
+from time import sleep
 from models.base_model import BaseModel
-docs = models.base_model.__doc__
 
+class test_BaseModel_instantiation(unittest.TestCase):
+    """ test instantiation of BaseModel """
+    def test_BaseModel_instantiation(self):
+        """ test instantiation of BaseModel """
+        bm = BaseModel()
+        self.assertTrue(hasattr(bm, "id"))
+        self.assertTrue(hasattr(bm, "created_at"))
+        self.assertTrue(hasattr(bm, "updated_at"))
 
-class BaseModelDoc(unittest.TestCase):
-    """Check the documentation and style of BaseModel class"""
+    def test_BaseModel_instantiation_no_args(self):
+        """ test instantiation of BaseModel with no args """
+        self.assertEqual(BaseModel, type(BaseModel()))
 
-    @classmethod
-    def setUpClass(self):
-        """Basic set"""
-        self.base_funcs = inspect.getmembers(BaseModel, inspect.isfunction)
+    def test_BaseModel_instantiation_kwargs(self):
+        """ test instantiation of BaseModel with kwargs """
+        bm = BaseModel(name="Ronald")
+        self.assertTrue(hasattr(bm, "name"))
 
-    def pep8(self):
-        """models/base_model.py apply to PEP8."""
-        for path in ['models/base_model.py',
-                     'tests/test_models/test_base_model.py']:
-            with self.subTest(path=path):
-                errors = pycodestyle.Checker(path).check_all()
-                self.assertEqual(errors, 0)
-
-    def test_docstring(self):
-        """If is present module docstring"""
-        self.assertIsNot(docs, None,
-                         "base_model.py needs a docstring")
-        self.assertTrue(len(docs) > 1,
-                        "base_model.py needs a docstring")
-
-    def test_docstring_class(self):
-        """BaseModel class docstring"""
-        self.assertIsNot(BaseModel.__doc__, None,
-                         "BaseModel class needs a docstring")
-        self.assertTrue(len(BaseModel.__doc__) >= 1,
-                        "BaseModel class needs a docstring")
-
-    def test_docstring_fun(self):
-        """Docstring in BaseModel methods"""
-        for func in self.base_funcs:
-            with self.subTest(function=func):
-                self.assertIsNot(
-                    func[1].__doc__,
-                    None,
-                    "{:s} method needs a docstring".format(func[0])
-                )
-                self.assertTrue(
-                    len(func[1].__doc__) > 1,
-                    "{:s} method needs a docstring".format(func[0])
-                )
+if __name__ == "__main__":
+    unittest.main()

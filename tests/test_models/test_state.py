@@ -17,8 +17,10 @@ class test_state_instantiates(unittest.TestCase):
     """ Unittest for testing instantiation"""
 
     def test_instantiation(self):
-        self.assertIsInstance(State, type(State()))
+        self.assertIs(State, type(State()))
 
+    def test_instantiation_with_kwargs(self):
+        self.assertIs(State, type(State(name="California")))
 
 if __name__ == "__main__":
     unittest.main()
