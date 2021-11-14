@@ -19,5 +19,27 @@ class testUser(unittest.TestCase):
         self.assertTrue(hasattr(user, "first_name"))
         self.assertTrue(hasattr(user, "last_name"))
 
+    def test_types(self):
+        """ checks if it has correct types """
+        user = User()
+        self.assertEqual(type(user.email), str)
+        self.assertEqual(type(user.password), str)
+        self.assertEqual(type(user.first_name), str)
+        self.assertEqual(type(user.last_name), str)
+
+    def test_values(self):
+        """ checks if it has correct values """
+        user = User()
+        self.assertEqual(user.email, "")
+        self.assertEqual(user.password, "")
+        self.assertEqual(user.first_name, "")
+        self.assertEqual(user.last_name, "")
+
+    def test_str(self):
+        """ checks if it has correct string representation """
+        user = User()
+        string = "[User] ({}) {}".format(user.id, user.__dict__)
+        self.assertEqual(string, str(user))
+
 if __name__ == '__main__':
     unittest.main()
