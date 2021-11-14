@@ -199,8 +199,8 @@ saves it (to the JSON file) and prints the id.
             print("** instance id missing **")
             return
         key = args_list[0] + "." + args_list[1]
-        my_object = models.storage.all()
-        if key not in my_object:
+        all_objects = models.storage.all()
+        if key not in all_objects:
             print("** no instance found **")
             return
         if len(args_list) == 2:
@@ -210,13 +210,13 @@ saves it (to the JSON file) and prints the id.
         if len(list_args) == 1:
             print("** value missing **")
             return
-        attr = args_list[2]
+        attribute = args_list[2]
         try:
-            value = getattr(my_object[key], attr)
-            args_type = type(value)
-            setattr(my_object[key], attr, args_type([1]))
+            value = getattr(all_objects[key], attribute)
+            args_type = attribute.type(value)
+            setattr(all_objects[key], attribute, args_type([1]))
         except:
-            setattr(my_object[key], attr, list_args[1])
+            setattr(all_objects[key], attribute, list_args[1])
         models.storage.save()
 
     def do_count(self, args):
