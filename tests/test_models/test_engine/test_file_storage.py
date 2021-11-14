@@ -13,6 +13,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class TestFileStorage(unittest.TestCase):
 
     def test_doc(self):
@@ -20,16 +21,22 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(models.engine.file_storage.FileStorage.__doc__)
         self.assertIsNotNone(models.engine.file_storage.__doc__)
-        self.assertIsNotNone(models.engine.file_storage.FileStorage.all.__doc__)
-        self.assertIsNotNone(models.engine.file_storage.FileStorage.__init__.__doc__)
-        self.assertIsNotNone(models.engine.file_storage.FileStorage.new.__doc__)
-        self.assertIsNotNone(models.engine.file_storage.FileStorage.save.__doc__)
-        self.assertIsNotNone(models.engine.file_storage.FileStorage.reload.__doc__)
+        self.assertIsNotNone(models.engine.file_storage.FileStorage.
+                             all.__doc__)
+        self.assertIsNotNone(models.engine.file_storage.FileStorage.
+                             __init__.__doc__)
+        self.assertIsNotNone(models.engine.file_storage.FileStorage.
+                             new.__doc__)
+        self.assertIsNotNone(models.engine.file_storage.FileStorage.
+                             save.__doc__)
+        self.assertIsNotNone(models.engine.file_storage.FileStorage.
+                             reload.__doc__)
 
     def test_classes(self):
         """check if classes are created"""
 
-        self.assertIsInstance(models.engine.file_storage.FileStorage(), models.engine.file_storage.FileStorage)
+        self.assertIsInstance(models.engine.file_storage.FileStorage(),
+                              models.engine.file_storage.FileStorage)
 
     def test_all(self):
         """check if all method is working"""
