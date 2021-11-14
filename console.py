@@ -212,12 +212,10 @@ saves it (to the JSON file) and prints the id.
             return
         attribute = args_list[2]
         try:
-            value = getattr(all_objects[key], attribute)
-            args_type = attribute.type(value)
-            setattr(all_objects[key], attribute, args_type([1]))
-        except:
             setattr(all_objects[key], attribute, list_args[1])
-        models.storage.save()
+        except:
+            print("** attribute name missing **")
+            return
 
     def do_count(self, args):
         """counts the number of instances of a class"""
