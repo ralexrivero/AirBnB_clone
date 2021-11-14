@@ -95,6 +95,15 @@ class Test_BaseModel_to_dict(unittest.TestCase):
     def test_BaseModel_dict_type(self):
         """ test to_dict method """
 
+    def test_BaseModel_dict_keys(self):
+        """ test to_dict method correct keys """
+        bm = BaseModel()
+        self.assertIn("id", bm.to_dict())
+        self.assertIn("created_at", bm.to_dict())
+        self.assertIn("updated_at", bm.to_dict())
+        self.assertIn("__class__", bm.to_dict())
+
+
 ###############################################################################
 # test_BaseModel_str
 ###############################################################################
