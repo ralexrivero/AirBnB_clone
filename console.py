@@ -181,7 +181,7 @@ class HBNBCommand(cmd.Cmd):
                     """if args is in key, then the class exists"""
                     toke_key = key.split(".")
                     """toke_key is a list with the class name and the id"""
-                    key_new = "[" + toke_key[0] + "]"
+                    key_new = "[" + toke_key[0] + "]"/
                     + " (" + toke_key[1] + ")"
                     list_objects.append(key_new + " " + str(value))
                     """list_objects.append(key_new + " " + str(value))
