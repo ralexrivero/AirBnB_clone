@@ -60,9 +60,37 @@ class test_BaseModel_instantiation(unittest.TestCase):
     def test_BaseModel_create_sleep(self):
         """ create two objects at different time """
         bm1 = BaseModel()
-        sleep(1)
+        sleep(0.1)
         bm2 = BaseModel()
         self.assertNotEqual(bm1.created_at, bm2.created_at)
+
+###############################################################################
+# test_BaseModel_save
+###############################################################################
+
+    def test_BaseModel_save(self):
+        """ Test save method """
+        bm = BaseModel()
+        bm.save()
+        self.assertNotEqual(bm.created_at, bm.updated_at)
+
+    def test_BaseModel_save_2(self):
+        """ test save two times """
+        bm = BaseModel()
+        bm.save()
+        sleep(0.2)
+        bm.save()
+        self.assertLess(bm.created_at, bm.updated_at)
+
+###############################################################################
+# test_BaseModel_str
+###############################################################################
+
+    def test_BaseModel_str(self):
+        """ test str method. assertEqual: a and b are equal"""
+        bm = BaseModel()
+        self.assertEqual(type(str(bm)), str)
+
 
 if __name__ == "__main__":
     unittest.main()
