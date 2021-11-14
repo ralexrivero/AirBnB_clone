@@ -17,7 +17,8 @@ from models.base_model import BaseModel
 # test_BaseModel_instantiation
 ###############################################################################
 
-class test_BaseModel_instantiation(unittest.TestCase):
+
+class Test_BaseModel_instantiation(unittest.TestCase):
     """ test instantiation of BaseModel """
     def test_BaseModel_instantiation(self):
         """ test instantiation of BaseModel """
@@ -68,6 +69,8 @@ class test_BaseModel_instantiation(unittest.TestCase):
 # test_BaseModel_save
 ###############################################################################
 
+
+class Test_BaseModel_save(unittest.TestCase):
     def test_BaseModel_save(self):
         """ Test save method """
         bm = BaseModel()
@@ -83,13 +86,45 @@ class test_BaseModel_instantiation(unittest.TestCase):
         self.assertLess(bm.created_at, bm.updated_at)
 
 ###############################################################################
+# test_BaseModel_instantiation
+###############################################################################
+
+
+class Test_BaseModel_to_dict(unittest.TestCase):
+    """ test to_dict method """
+    def test_BaseModel_dict_type(self):
+        """ test to_dict method """
+
+    def test_BaseModel_dict_keys(self):
+        """ test to_dict method correct keys """
+        bm = BaseModel()
+        self.assertIn("id", bm.to_dict())
+        self.assertIn("created_at", bm.to_dict())
+        self.assertIn("updated_at", bm.to_dict())
+        self.assertIn("__class__", bm.to_dict())
+
+
+###############################################################################
 # test_BaseModel_str
 ###############################################################################
+
+
+class Test_BaseModel_str(unittest.TestCase):
+    """ test str method """
 
     def test_BaseModel_str(self):
         """ test str method. assertEqual: a and b are equal"""
         bm = BaseModel()
         self.assertEqual(type(str(bm)), str)
+
+    def test_BaseModel_add_attr(self):
+        """ test to_dict if contains added attributes """
+        bm = BaseModel()
+        bm.name = "Ronald"
+        bm.my_number = 41
+        self.assertIn("name", bm.to_dict())
+        self.assertIn("my_number", bm.to_dict())
+
 
 
 if __name__ == "__main__":
