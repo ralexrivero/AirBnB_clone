@@ -145,8 +145,8 @@ saves it (to the JSON file) and prints the id.
                 """key = args_list[0] + "." + args_list[1]
                     key is the key to search in the dictionary"""
                 if key in models.storage.all():
-                    models.storage.all().pop(key)
-                    """pop(key) removes the key from the dictionary"""
+                    del models.storage.all()[key]
+                    """del(key) removes the key from the dictionary"""
                     models.storage.save()
                     """save() saves the changes in the JSON file"""
                 else:
