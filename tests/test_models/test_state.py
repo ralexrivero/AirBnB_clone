@@ -17,7 +17,7 @@ class test_state_instantiates(unittest.TestCase):
     """ Unittest for testing instantiation"""
 
     def test_instantiation(self):
-        self.assertIsInstance(State, type(State()))
+        self.assertIs(State, type(State()))
 
 
 if __name__ == "__main__":
