@@ -26,5 +26,10 @@ class test_BaseModel_instantiation(unittest.TestCase):
         """ test instantiation of BaseModel with no args """
         self.assertEqual(BaseModel, type(BaseModel()))
 
+    def test_BaseModel_instantiation_kwargs(self):
+        """ test instantiation of BaseModel with kwargs """
+        bm = BaseModel(name="Ronald")
+        self.assertTrue(hasattr(bm, "name"))
+
 if __name__ == "__main__":
     unittest.main()
