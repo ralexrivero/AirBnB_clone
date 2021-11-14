@@ -182,7 +182,7 @@ saves it (to the JSON file) and prints the id.
                     """list_objects.append(key_new + " " + str(value))
                         list_objects is a list with the objects in format
                         [class name] (id) object"""
-                    print(toke_key)
+                    print(list_objects)
 
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
@@ -206,13 +206,15 @@ saves it (to the JSON file) and prints the id.
         if len(args_list) == 2:
             print("** attribute name missing **")
             return
-        list_args = args.split('"')
-        if len(list_args) == 1:
+        if len(args_list) == 3:
             print("** value missing **")
             return
         attribute = args_list[2]
+        value = args_list[3]
+        """args_list[0] is the class name, args_list[1] is the id, args_list[2]
+        is the attribute name, args_list[3] is the value to update""" 
         try:
-            setattr(all_objects[key], attribute, list_args[1])
+            setattr(all_objects[key], attribute, value)
         except:
             print("** attribute name missing **")
             return
