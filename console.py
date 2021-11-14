@@ -211,11 +211,11 @@ saves it (to the JSON file) and prints the id.
         attribute = args_list[2]
         value = args_list[3]
         if '"' in value:
-                value = value.strip('"')
+            value = value.strip('"')
         """args_list[0] is the class name, args_list[1] is the id, args_list[2]
         is the attribute name, args_list[3] is the value to update"""
         try:
-            
+
             setattr(all_objects[key], attribute, value)
             models.storage.save()
         except AttributeError:
