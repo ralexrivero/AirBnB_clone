@@ -190,32 +190,37 @@ saves it (to the JSON file) and prints the id.
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
         updating attribute (save the change into the JSON file)."""
-        args_list = shlex.split(args)
-        if len(args_list) == 0:
+        
+        if args == '':
             print("** class name missing **")
+            return
+        args_list = args.split()
+        if args_list[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
             return
         if len(args_list) == 1:
             print("** instance id missing **")
             return
+        key = args_list[0] + "." + args_list[1]
+        my_object = models.storage.all()
+        if key not in my_object:
+            print("** no instance found **")
+            return
         if len(args_list) == 2:
             print("** attribute name missing **")
             return
-        if len(args_list) == 3:
+        list_args = args.split('"')
+        if len(list_args) == 1:
             print("** value missing **")
             return
-        if args_list[0] not in my_classes:
-            print("** class doesn't exist **")
-            return
-        all_objects = models.storage.all()
-        for id_objects in all_objects.keys():
-            if id_objects == args[1]:
-                setattr(all_objects[id_objects], args[2], args[3])
-                """setattr(all_objects[id_objects], args[2], args[3])
-                is a function that sets the value of the attribute
-                args[2] to the value args[3]"""
-                models.storage.save()
-                return
-        print("** no instance found **")
+        attr = args_list[2]
+        try:
+            value = getattr(my_object[key], attr)
+            args_type = type(value)
+            setattr(my_object[key], attr, args_type([1]))
+        except:
+            setattr(my_object[key], attr, list_args[1])
+        models.storage.save()
 
     def do_count(self, args):
         """counts the number of instances of a class"""
