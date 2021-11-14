@@ -215,7 +215,7 @@ saves it (to the JSON file) and prints the id.
         is the attribute name, args_list[3] is the value to update""" 
         try:
             setattr(all_objects[key], attribute, value)
-        except:
+        except AttributeError:
             print("** attribute name missing **")
             return
 
