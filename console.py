@@ -190,20 +190,20 @@ saves it (to the JSON file) and prints the id.
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
         updating attribute (save the change into the JSON file)."""
-        args = args.split()
-        if len(args) == 0:
+        args_list = shlex.split(args)
+        if len(args_list) == 0:
             print("** class name missing **")
             return
-        if len(args) == 1:
+        if len(args_list) == 1:
             print("** instance id missing **")
             return
-        if len(args) == 2:
+        if len(args_list) == 2:
             print("** attribute name missing **")
             return
-        if len(args) == 3:
+        if len(args_list) == 3:
             print("** value missing **")
             return
-        if args[0] not in my_classes:
+        if args_list[0] not in my_classes:
             print("** class doesn't exist **")
             return
         all_objects = models.storage.all()
