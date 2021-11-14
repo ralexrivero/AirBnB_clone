@@ -126,6 +126,5 @@ class Test_BaseModel_str(unittest.TestCase):
         self.assertIn("my_number", bm.to_dict())
 
 
-
 if __name__ == "__main__":
     unittest.main()
