@@ -18,12 +18,9 @@ class TestFileStorage(unittest.TestCase):
         """
         Test the all function
         """
-        filestorage = FileStorage()
-        instances = filestorage.all
-        self.assertIsInstance(instances, dict)
-        self.assertEqual(len(instances), 0)
-        self.assertIs(instances, filestorage._FileStorage__objects)
-        self.assertIsNotNone(filestorage._FileStorage__file_path)
+       
+        self.assertEqual(FileStorage, type(FileStorage()))
+        
 
 if __name__ == '__main__':
     unittest.main()
