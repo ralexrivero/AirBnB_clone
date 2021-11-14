@@ -35,5 +35,11 @@ class testUser(unittest.TestCase):
         self.assertEqual(user.first_name, "")
         self.assertEqual(user.last_name, "")
 
+    def test_str(self):
+        """ checks if it has correct str representation """
+        user = User()
+        string = "[User] ({}) {}".format(user.id, user.__dict__)
+        self.assertEqual(user.__str__(), string)
+
 if __name__ == '__main__':
     unittest.main()
