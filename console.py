@@ -49,7 +49,7 @@ class HBNBCommand(cmd.Cmd):
                "Review"]
 
     """reload() reloads the JSON file"""
- 
+
     """instances = ["do_show", "do_destroy", "do_all", "do_update"]"""
 
     def do_quit(self, args):
@@ -187,7 +187,7 @@ saves it (to the JSON file) and prints the id.
     def do_update(self, args):
         """Updates an instance based on the class name and id by adding or
         updating attribute (save the change into the JSON file)."""
-        
+
         if args == '':
             print("** class name missing **")
             return
@@ -212,7 +212,7 @@ saves it (to the JSON file) and prints the id.
         attribute = args_list[2]
         value = args_list[3]
         """args_list[0] is the class name, args_list[1] is the id, args_list[2]
-        is the attribute name, args_list[3] is the value to update""" 
+        is the attribute name, args_list[3] is the value to update"""
         try:
             setattr(all_objects[key], attribute, value)
         except AttributeError:

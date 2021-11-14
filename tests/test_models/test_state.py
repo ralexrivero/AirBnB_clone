@@ -1,7 +1,24 @@
 #!/usr/bin/env python
 """
-Unitest
+Unitest for models/state.py
 
 Unittest classes:
-
+    test_state_instantiates
+    test_state_save
+    test_state_dict
     """
+
+import unittest
+import models
+from models.state import State
+
+
+class test_state_instantiates(unittest.TestCase):
+    """ Unittest for testing instantiation"""
+
+    def test_instantiation(self):
+        self.assertIsInstance(State, type(State()))
+
+
+if __name__ == "__main__":
+    unittest.main()
