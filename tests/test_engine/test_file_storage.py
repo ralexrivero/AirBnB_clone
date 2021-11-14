@@ -14,11 +14,16 @@ from models.review import Review
 
 class TestFileStorage(unittest.TestCase):
 
-    def test_pep8style(self):
+    def test_all_FS(self):
         """
-        Test that we conform to PEP8
+        Test the all function
         """
-        pep8style = pep8.StyleGuide(quiet=True)
-        result = pep8style.check_files(['models/engine/file_storage.py'])
-        self.assertEqual(result.total_errors, 0,
-                         "Found code style errors (and warnings).")
+        filestorage = FileStorage()
+        instances = filestorage.all
+        self.assertIsInstance(instances, dict)
+        self.assertEqual(len(instances), 0)
+        self.assertIs(instances, filestorage._FileStorage__objects)
+        self.assertIsNotNone(filestorage._FileStorage__file_path)
+
+if __name__ == '__main__':
+    unittest.main()
