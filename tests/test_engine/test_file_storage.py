@@ -3,6 +3,7 @@
 Unitest for the FileStorage class
 """
 import unittest
+import models
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
 from models.user import User
@@ -14,13 +15,13 @@ from models.review import Review
 
 class TestFileStorage(unittest.TestCase):
 
-    def test_all_FS(self):
+    def test_FleStorage(self):
         """
-        Test the all function
+        Test for the FileStorage class
         """
-       
+
         self.assertEqual(FileStorage, type(FileStorage()))
-        
+
 
 if __name__ == '__main__':
     unittest.main()
