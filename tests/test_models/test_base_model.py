@@ -131,6 +131,11 @@ class Test_BaseModel_str(unittest.TestCase):
         self.assertEqual(type(bm.to_dict()["created_at"]), str)
         self.assertEqual(type(bm.to_dict()["updated_at"]), str)
 
+    def test_BaseModel_list_type(self):
+        """ test to_dict if contains added attributes """
+        bm = BaseModel()
+        self.assertEqual(type(bm.to_dict()), dict)
+
 
 if __name__ == "__main__":
     unittest.main()
