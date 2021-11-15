@@ -68,29 +68,6 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(models.storage.all())
 
-    def test_docstring(self):
-        """ Test class methods docstrings """
-        self.assertIsNotNone(FileStorage.__doc__)
-        self.assertIsNotNone(FileStorage.all.__doc__)
-        self.assertIsNotNone(FileStorage.new.__doc__)
-        self.assertIsNotNone(FileStorage.save.__doc__)
-        self.assertIsNotNone(FileStorage.reload.__doc__)
-
-    def test_isinstance(self):
-        self.assertEqual(type(FileStorage()), FileStorage)
-
-    def test_all(self):
-        obj_dict = FileStorage().all()
-        self.assertEqual(type(obj_dict), dict)
-
-    def test_new(self):
-        model = BaseModel()
-        sto = FileStorage()
-        sto.new(model)
-        obj_key = "BaseModel." + model.id
-        dict_obj = sto.all()
-        self.assertIn(obj_key, dict_obj.keys())
-
 
 if __name__ == '__main__':
     unittest.main()
