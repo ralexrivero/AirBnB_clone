@@ -239,6 +239,14 @@ class TestReview_to_dict(unittest.TestCase):
         self.assertEqual("Holberton", rev.middle_name)
         self.assertIn("my_number", rev.to_dict())
 
+    def test_review_to_dict_attr_2(self):
+        """ test added attributes """
+        rev = Review()
+        rev.middle_name = "Holberton"
+        rev.my_number = 98
+        self.assertEqual(98, rev.my_number)
+        self.assertIn("my_number", rev.to_dict())
+
 
 if __name__ == "__main__":
     unittest.main()
