@@ -16,14 +16,8 @@
 * [0x06 License](#0x06-License)
 * [0x07 Contributing](#0x07-Contributing)
 * [0x08 Todo](#0x08-Todo)
-* [0x09 Changelog](#0x09-Changelog)
-* [0x0A Tests](#0x0A-Tests)
-* [0x0B Questions](#0x0B-Questions)
-* [0x0C Conclusion](#0x0C-Conclusion)
-* [0x0D References](#0x0D-References)
-* [0x0E Acknowledgements](#0x0E-Acknowledgements)
-* [0x0F History](#0x0F-History)
-* [0x10 Credits](#0x10-Credits)
+* [0x09 References](#0x0A-References)
+* [0x0A Credits](#0x0B-Credits)
 
 ## 0x01 Introduction
 
@@ -40,7 +34,9 @@ The console willl perform the following tasks:
 * do operations on objects
 * destroy an object
 
-`BaseModel`
+### Storage
+
+All the classes are handled by the `Storage` engine in the `FileStorage` Class.
 
 ## 0x02 Environment
 
@@ -77,8 +73,8 @@ Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
 
-(hbnb) 
-(hbnb) 
+(hbnb)
+(hbnb)
 (hbnb) quit
 $
 ```
@@ -92,7 +88,7 @@ $ echo "help" | ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
+(hbnb)
 $
 $ cat test_help
 help
@@ -103,7 +99,7 @@ $ cat test_help | ./console.py
 Documented commands (type help <topic>):
 ========================================
 EOF  help  quit
-(hbnb) 
+(hbnb)
 $
 ```
 
@@ -168,7 +164,7 @@ Documented commands (type help <topic>):
 ========================================
 EOF  all  count  create  destroy  help  quit  show  update
 
-(hbnb) 
+(hbnb)
 ```
 
 * Quit the console:
@@ -194,7 +190,7 @@ create <class>
 ```bash
 (hbnb) create BaseModel
 6cfb47c4-a434-4da7-ac03-2122624c3762
-(hbnb) 
+(hbnb)
 ```
 
 * Show
@@ -206,7 +202,56 @@ show <class> <id>
 ```bash
 (hbnb) show BaseModel 6cfb47c4-a434-4da7-ac03-2122624c3762
 [BaseModel] (a) [BaseModel] (6cfb47c4-a434-4da7-ac03-2122624c3762) {'id': '6cfb47c4-a434-4da7-ac03-2122624c3762', 'created_at': datetime.datetime(2021, 11, 14, 3, 28, 45, 571360), 'updated_at': datetime.datetime(2021, 11, 14, 3, 28, 45, 571389)}
-(hbnb) 
+(hbnb)
+```
+
+* Destroy
+
+> *Deletes an instance of a given class with a given ID.*
+> *Update the file.json*
+
+```bash
+(hbnb) create User
+0c98d2b8-7ffa-42b7-8009-d9d54b69a472
+(hbnb) destroy User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
+(hbnb) show User 0c98d2b8-7ffa-42b7-8009-d9d54b69a472
+** no instance found **
+(hbnb)
+```
+
+* all
+
+> *Prints all string representation of all instances of a given class.*
+> *If no class is passed, all classes are printed.*
+
+```bash
+(hbnb) create BaseModel
+e45ddda9-eb80-4858-99a9-226d4f08a629
+(hbnb) all BaseModel
+["[BaseModel] (4c8f7ebc-257f-4ed1-b26b-e7aace459897) [BaseModel] (4c8f7ebc-257f-4ed1-b26b-e7aace459897) {'id': '4c8f7ebc-257f-4ed1-b26b-e7aace459897', 'created_at': datetime.datetime(2021, 11, 13, 22, 19, 19, 447155), 'updated_at': datetime.datetime(2021, 11, 13, 22, 19, 19, 447257), 'name': 'My First Model', 'my_number': 89}"]
+["[BaseMode
+```
+
+* count
+
+> *Prints the number of instances of a given class.*
+
+```bash
+(hbnb) create City
+4e01c33e-2564-42c2-b61c-17e512898bad
+(hbnb) create City
+e952b772-80a5-41e9-b728-6bc4dc5c21b4
+(hbnb) count City
+2
+(hbnb)
+```
+
+* update
+> *Updates an instance based on the class name, id, and kwargs passed.*
+> *Update the file.json*
+
+```bash
+
 ```
 
 ## 0x06 License
@@ -220,16 +265,9 @@ This is a team project for practice and learning purposes. Contribution is welco
 ## 0x08 Todo
 
 * improve the wikipages
+* Complete the tests for console.py
 
-## 0x09 Changelog
-
-## 0x0A Tests
-
-## 0x0B Questions
-
-## 0x0C Conclusion
-
-## 0x0D References
+## 0x09 References
 
 https://www.w3schools.com/python/python_modules.asp
 
@@ -240,11 +278,7 @@ https://docs.python.org/3/library/unittest.html
 https://developers.google.com/edu/python
 
 
-## 0x0E Acknowledgements
-
-## 0x0F History
-
-## 0x10 Credits
+## 0x0A Credits
 
 Rodrigo
 
