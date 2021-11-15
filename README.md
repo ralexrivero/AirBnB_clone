@@ -281,6 +281,7 @@ This is a team project for practice and learning purposes. Contribution is welco
 
 ## 0x08 Todo
 
+* Fix the bug in the `count` command
 * improve the wikipages
 * Complete the tests for console.py
 
