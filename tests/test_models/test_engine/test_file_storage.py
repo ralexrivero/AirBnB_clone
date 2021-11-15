@@ -63,7 +63,5 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(models.engine.file_storage.FileStorage().all())
 
-
-
 if __name__ == '__main__':
     unittest.main()
