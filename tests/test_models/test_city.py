@@ -30,5 +30,12 @@ class testfile(unittest.TestCase):
         my_city.save()
         self.assertNotEqual(my_city.created_at, my_city.updated_at)
 
+    def test_to_dict(self):
+        """ checks if the to_dict method works """
+        my_city = City()
+        new_dict = my_city.to_dict()
+        self.assertEqual(type(new_dict), dict)
+        self.assertTrue('to_dict' in dir(my_city))
+
 if __name__ == "__main__":
     unittest.main()
