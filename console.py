@@ -241,6 +241,18 @@ saves it (to the JSON file) and prints the id.
                     """counter += 1 is a function that adds 1 to the counter"""
             print(counter)
 
+    def fn_show(self, args):
+        """function class.all()
+        print all string representation of all instances
+        based or not on the class name."""
+        my_objects = models.storage.all()
+        print("[", end="")
+        for key, value in my_objects.items():
+            if args in key:
+                print(value, end="")
+                print(", ", end="")
+        print("]")
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
