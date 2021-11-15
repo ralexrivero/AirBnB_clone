@@ -68,10 +68,5 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(models.storage.all())
 
-    def test_errors(self):
-        """check if errors method is working"""
-
-        self.assertIsNotNone(models.storage.errors())
-
 if __name__ == '__main__':
     unittest.main()
