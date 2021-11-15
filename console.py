@@ -47,9 +47,9 @@ class HBNBCommand(cmd.Cmd):
                "Place",
                "Review"]
 
-    """reload() reloads the JSON file"""
+    """reload() reloads the JSON file
 
-    """instances = ["do_show", "do_destroy", "do_all", "do_update"]"""
+    instances = ["do_show", "do_destroy", "do_all", "do_update"]"""
 
     def do_quit(self, args):
         """Quit command to exit the program.\n"""
@@ -62,30 +62,6 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Do nothing on empty line\n"""
         pass
-
-    def default(self, args):
-        """deffault method to execute the command"""
-        if '.' not in args:
-            print("*** Unknown syntax: {}".format(args))
-        list_args = args.split()
-        if list_args[0] == "":
-            print("** class name missing **")
-            return
-        if list_args[0] not in HBNBCommand.classes:
-            print("** class doesn't exist **")
-            return
-        if list_args[1] == "all()":
-            self.fn_all(list_args[0])
-        elif list_args[1] == "count()":
-            self.fn_count(list_args[0])
-        elif list_args[1][0:5] == "show(" and list_args[1][-1] == ")":
-            self.fn_show(list_args[0], list_args[1])
-        elif list_args[1][0:8] == "destroy(" and list_args[1][-1] == ")":
-            self.fn_destroy(list_args[0], list_args[1])
-        elif list_args[1][0:7] == "update(" and list_args[1][-1] == ")":
-            self.fn_update(list_args[0], list_args[1])
-        else:
-            print("*** Unknown syntax: ", args)
 
     def do_create(self, args):
         """Creates a new instance of BaseModel \
@@ -252,22 +228,6 @@ saves it (to the JSON file) and prints the id.
                     counter += 1
                     """counter += 1 is a function that adds 1 to the counter"""
             print(counter)
-
-    def fn_all(self, args):
-        """function class.all()"""
-
-
-    def fn_show(self, args):
-        """function class.all()
-        print all string representation of all instances
-        based or not on the class name."""
-        my_objects = models.storage.all()
-        print("[", end="")
-        for key, value in my_objects.items():
-            if args in key:
-                print(value, end="")
-                print(", ", end="")
-        print("]")
 
 
 if __name__ == "__main__":

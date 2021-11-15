@@ -106,6 +106,12 @@ class Test_Console_help(unittest.TestCase):
             self.assertFalse(HBNBCommand().onecmd("help"))
             self.assertEqual(help, f.getvalue().strip())
 
+    def test_help_invalid(self):
+        help = "No help for invalid command"
+        with patch("sys.stdout", new=StringIO()) as f:
+            self.assertFalse(HBNBCommand().onecmd("help invalid"))
+            self.assertEqual(help, f.getvalue().strip())
+
 
 if __name__ == "__main__":
     unittest.main()
