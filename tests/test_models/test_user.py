@@ -47,5 +47,19 @@ class testUser(unittest.TestCase):
         user.save()
         self.assertNotEqual(user.created_at, user.updated_at)
 
+
+    def test_to_dict(self):
+        """ checks if it returns a dictionary """
+        user = User()
+        user_dict = user.to_dict()
+        self.assertEqual(type(user_dict), dict)
+        self.assertTrue(hasattr(user_dict, "__class__"))
+        self.assertEqual(user_dict["__class__"], "User")
+        self.assertTrue(hasattr(user_dict, "created_at"))
+        self.assertTrue(hasattr(user_dict, "updated_at"))
+        self.assertTrue(hasattr(user_dict, "email"))
+
+
+
 if __name__ == '__main__':
     unittest.main()
