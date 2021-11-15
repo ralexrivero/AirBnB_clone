@@ -18,15 +18,17 @@ class testfile(unittest.TestCase):
         self.assertTrue('state_id' in City.__dict__)
         self.assertTrue('name' in City.__dict__)
 
-    def test_init(self):
-        """ checks if it has the correct attributes """
+    def test_str(self):
+        """ checks if the str method works """
         my_city = City()
-        self.assertTrue(isinstance(my_city, City))
-        self.assertTrue(isinstance(my_city.id, str))
-        self.assertTrue(isinstance(my_city.created_at, str))
-        self.assertTrue(isinstance(my_city.updated_at, str))
-        self.assertTrue(isinstance(my_city.state_id, str))
-        self.assertTrue(isinstance(my_city.name, str))
+        string = "[City] ({}) {}".format(my_city.id, my_city.__dict__)
+        self.assertEqual(string, str(my_city))
+
+    def test_save(self):
+        """ checks if the save method works """
+        my_city = City()
+        my_city.save()
+        self.assertNotEqual(my_city.created_at, my_city.updated_at)
 
 if __name__ == "__main__":
     unittest.main()
