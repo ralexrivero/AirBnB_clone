@@ -63,17 +63,30 @@ class HBNBCommand(cmd.Cmd):
         """Do nothing on empty line\n"""
         pass
 
-    """def default(self, args):
-        default method to execute the command
-
-        arg = args.replace('(', '').replace(')', '').replace('.', '')
-        arg = args.replace('.', '').replace('"', '').replace('"', '')
-        list_args = arg.split(" ")
-        list_args.remove("")
-        if len(list_args) > 1:
-            cmd_args = split.args[1]
-            arg.remove(cmd_args)
-        if cmd_args == """
+    def default(self, args):
+        """deffault method to execute the command"""
+        if '.' not in args
+        """if '.' not in argd, then the command is not valid"""
+        print("*** Unknown syntax: {}".format(args))
+        list_args = args.split()
+        if list_args[0] == "":
+            print("** class name missing **")
+            return
+        if list_args[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+            return
+        if list_args[1] == "all()":
+            self.fn_all(list_args[0])
+        elif list_args[1] == "count()":
+            self.fn_count(list_args[0])
+        elif list_args[1][0:5] == "show(" and list_args[1][-1] == ")":
+            self.fn_show(list_args[0], list_args[1])
+        elif list_args[1][0:8] == "destroy(" and list_args[1][-1] == ")":
+            self.fn_destroy(list_args[0], list_args[1])
+        elif list_args[1][0:7] == "update(" and list_args[1][-1] == ")":
+            self.fn_update(list_args[0], list_args[1])
+        else:
+            print("*** Unknown syntax: ", args)
 
     def do_create(self, args):
         """Creates a new instance of BaseModel \
@@ -240,6 +253,10 @@ saves it (to the JSON file) and prints the id.
                     counter += 1
                     """counter += 1 is a function that adds 1 to the counter"""
             print(counter)
+
+    def fn_all(self, args):
+        """function class.all()"""
+
 
     def fn_show(self, args):
         """function class.all()
