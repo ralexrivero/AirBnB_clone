@@ -125,6 +125,12 @@ class Test_BaseModel_str(unittest.TestCase):
         self.assertIn("name", bm.to_dict())
         self.assertIn("my_number", bm.to_dict())
 
+    def test_BaseModel_format_date(self):
+        """ test format of date """
+        bm = BaseModel()
+        self.assertEqual(type(bm.to_dict()["created_at"]), str)
+        self.assertEqual(type(bm.to_dict()["updated_at"]), str)
+
 
 if __name__ == "__main__":
     unittest.main()
