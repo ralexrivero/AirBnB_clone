@@ -68,5 +68,6 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(models.storage.all())
 
+
 if __name__ == '__main__':
     unittest.main()
