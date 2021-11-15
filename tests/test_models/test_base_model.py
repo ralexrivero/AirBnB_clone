@@ -144,6 +144,19 @@ class Test_BaseModel_str(unittest.TestCase):
         self.assertEqual(type(bm.to_dict()["updated_at"]), str)
         self.assertEqual(type(bm.to_dict()["__class__"]), str)
 
+    def test_BaseModel_full_dict(self):
+        """ test to_dict if contains added attributes """
+        bm = BaseModel()
+        bm.name = "Ronald"
+        bm.my_number = 41
+        self.assertEqual(type(bm.to_dict()), dict)
+        self.assertIn("name", bm.to_dict())
+        self.assertIn("my_number", bm.to_dict())
+        self.assertIn("id", bm.to_dict())
+        self.assertIn("created_at", bm.to_dict())
+        self.assertIn("updated_at", bm.to_dict())
+        self.assertIn("__class__", bm.to_dict())
+
 
 if __name__ == "__main__":
     unittest.main()
