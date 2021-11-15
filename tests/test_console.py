@@ -111,6 +111,11 @@ class Test_Console_help(unittest.TestCase):
             self.assertFalse(HBNBCommand().onecmd(""))
             self.assertEqual("", f.getvalue().strip())
 
+    def test_get_class(self):
+        with patch("sys.stdout", new=StringIO()) as f:
+            self.assertFalse(HBNBCommand().onecmd("all"))
+            self.assertEqual("", f.getvalue().strip())
+
 
 if __name__ == "__main__":
     unittest.main()
