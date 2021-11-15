@@ -36,6 +36,11 @@ class test_state_save(unittest.TestCase):
         state.save()
         self.assertNotEqual(state.created_at, state.updated_at)
 
+    def test_save_to_json(self):
+        state = State()
+        state.save()
+        self.assertIs(type(state.to_dict()), dict)
+
 
 if __name__ == "__main__":
     unittest.main()
