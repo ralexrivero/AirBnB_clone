@@ -287,6 +287,11 @@ class TestPlace_to_dict(unittest.TestCase):
         self.assertEqual(str, type(pl_dict["created_at"]))
         self.assertEqual(str, type(pl_dict["updated_at"]))
 
+    def test_to_dict_class_atr(self):
+        """ test if attributes are str type """
+        plc = Place()
+        pl_dict = plc.to_dict()
+        self.assertEqual("Place", pl_dict["__class__"])
 
 if __name__ == "__main__":
     unittest.main()
