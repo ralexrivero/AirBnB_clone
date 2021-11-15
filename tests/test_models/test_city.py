@@ -37,5 +37,9 @@ class testfile(unittest.TestCase):
         self.assertEqual(type(new_dict), dict)
         self.assertTrue('to_dict' in dir(my_city))
 
+    def test_docstring(self):
+        """ checks if the docstring is correct """
+        self.assertIsNotNone(City.__doc__)
+
 if __name__ == "__main__":
     unittest.main()
