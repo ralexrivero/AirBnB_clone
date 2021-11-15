@@ -247,5 +247,6 @@ class TestReview_to_dict(unittest.TestCase):
         self.assertEqual(98, rev.my_number)
         self.assertIn("my_number", rev.to_dict())
 
+
 if __name__ == "__main__":
     unittest.main()

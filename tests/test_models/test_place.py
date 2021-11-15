@@ -299,5 +299,6 @@ class TestPlace_to_dict(unittest.TestCase):
         pl_dict = plc.to_dict()
         self.assertEqual("Place", pl_dict["__class__"])
 
+
 if __name__ == "__main__":
     unittest.main()

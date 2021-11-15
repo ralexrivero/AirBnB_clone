@@ -84,6 +84,6 @@ class Test_models_amenity(unittest.TestCase):
         self.assertIn("'created_at': " + dt_repr, amstr)
         self.assertIn("'updated_at': " + dt_repr, amstr)
 
+
 if __name__ == '__main__':
     unittest.main()
-    

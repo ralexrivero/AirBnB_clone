@@ -41,5 +41,6 @@ class testfile(unittest.TestCase):
         """ checks if the docstring is correct """
         self.assertIsNotNone(City.__doc__)
 
+
 if __name__ == "__main__":
     unittest.main()
