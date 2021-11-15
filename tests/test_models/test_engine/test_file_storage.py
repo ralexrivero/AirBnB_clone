@@ -68,11 +68,10 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(models.storage.all())
 
-    def test_make_file_path(self):
-        """check if make_file_path method is working"""
+    def test_malformed_json(self):
+        """check if reload method is working"""
 
-        self.assertIsNotNone(models.engine.file_storage.FileStorage().
-                             make_file_path)
+        self.assertIsNone(models.storage.reload(""))
 
 if __name__ == '__main__':
     unittest.main()
