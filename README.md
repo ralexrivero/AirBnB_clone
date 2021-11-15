@@ -105,6 +105,8 @@ $
 
 ## 0x04 Testing
 
+All the test are defined in the `tests` folder.
+
 ### Documentation
 
 * Modules:
@@ -145,6 +147,15 @@ python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
 ```bash
 echo "python3 -m unittest discover tests" | bash
 ```
+
+### run test in non-interactive mode
+
+To run the tests in non-interactive mode, and discover all the test, you can use the command:
+
+```bash
+python3 -m unittest discover tests
+```
+
 
 ## 0x05 Usage
 
@@ -251,6 +262,12 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 > *Update the file.json*
 
 ```bash
+(hbnb) create User
+1afa163d-486e-467a-8d38-3040afeaa1a1
+(hbnb) update User 1afa163d-486e-467a-8d38-3040afeaa1a1 email "ralexrivero@gmail.com"
+(hbnb) show User 1afa163d-486e-467a-8d38-3040afeaa1a1
+[User] (s) [User] (1afa163d-486e-467a-8d38-3040afeaa1a1) {'id': '1afa163d-486e-467a-8d38-3040afeaa1a1', 'created_at': datetime.datetime(2021, 11, 14, 23, 42, 10, 502157), 'updated_at': datetime.datetime(2021, 11, 14, 23, 42, 10, 502186), 'email': 'ralexrivero@gmail.com'}
+(hbnb)
 
 ```
 
