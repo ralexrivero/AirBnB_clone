@@ -65,9 +65,8 @@ class HBNBCommand(cmd.Cmd):
 
     def default(self, args):
         """deffault method to execute the command"""
-        if '.' not in args
-        """if '.' not in argd, then the command is not valid"""
-        print("*** Unknown syntax: {}".format(args))
+        if '.' not in args:
+            print("*** Unknown syntax: {}".format(args))
         list_args = args.split()
         if list_args[0] == "":
             print("** class name missing **")
