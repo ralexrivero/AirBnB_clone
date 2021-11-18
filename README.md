@@ -258,6 +258,7 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 ```
 
 * update
+
 > *Updates an instance based on the class name, id, and kwargs passed.*
 > *Update the file.json*
 
@@ -282,6 +283,7 @@ This is a team project for practice and learning purposes. Contribution is welco
 ## 0x08 Todo
 
 * Fix the bug in the `count` command
+* Add usage to command help
 * improve the wikipages
 * Complete the tests for console.py
 

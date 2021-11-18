@@ -148,7 +148,7 @@ saves it (to the JSON file) and prints the id.
         """new_object is a dictionary with all the objects"""
         list_objects = []
         """list_objects is a list with all the objects"""
-        if args and args not in my_classes:
+        if args not in my_classes:
             """if args is not empty and args is not in my_classes,
             then the class doesn't exist"""
             print("** class doesn't exist **")
@@ -203,7 +203,6 @@ saves it (to the JSON file) and prints the id.
         """args_list[0] is the class name, args_list[1] is the id, args_list[2]
         is the attribute name, args_list[3] is the value to update"""
         try:
-
             setattr(all_objects[key], attribute, value)
             models.storage.save()
         except AttributeError:
