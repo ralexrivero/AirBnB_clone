@@ -13,11 +13,12 @@
 * [0x03 Installation](#0x03-Installation)
 * [0x04 Testing](#0x04-Testing)
 * [0x05 Usage](#0x05-Usage)
-* [0x06 License](#0x06-License)
-* [0x07 Contributing](#0x07-Contributing)
-* [0x08 Todo](#0x08-Todo)
-* [0x09 References](#0x09-References)
-* [0x0A Credits](#0x0A-Credits)
+* [0x06 WebStatic](#0x06-Web-Static)
+* [0x07 License](#0x07-License)
+* [0x08 Contributing](#0x08-Contributing)
+* [0x09 Todo](#0x09-Todo)
+* [0x0A References](#0x0A-References)
+* [0x0B Credits](#0x0B-Credits)
 
 ## 0x01 Introduction
 
@@ -272,22 +273,38 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 
 ```
 
-## 0x06 License
+## 0x06 Web Static
+
+* [0-index.html](web_static/0-index.html)
+* [1-index.html](web_static/1-index.html)
+* [2-index.html](web_static/2-index.html)
+* [3-index.html](web_static/3-index.html)
+* [4-index.html](web_static/4-index.html)
+* [5-index.html](web_static/5-index.html)
+* [6-index.html](web_static/6-index.html)
+* [7-index.html](web_static/7-index.html)
+* [8-index.html](web_static/8-index.html)
+* [100-index.html](web_static/100-index.html)
+* [101-index.html](web_static/101-index.html)
+* [102-index.html](web_static/102-index.html)
+* [103-index.html](web_static/103-index.html)
+
+## 0x07 License
 
 This project is under the Apache 2.0 license.
 
-## 0x07 Contributing
+## 0x08 Contributing
 
 This is a team project for practice and learning purposes. Contribution is welcome and encouraged.
 
-## 0x08 Todo
+## 0x09 Todo
 
 * Fix the bug in the `count` command
 * Add usage to command help
 * improve the wikipages
 * Complete the tests for console.py
 
-## 0x09 References
+## 0x0A References
 
 https://www.w3schools.com/python/python_modules.asp
 
@@ -297,8 +314,10 @@ https://docs.python.org/3/library/unittest.html
 
 https://developers.google.com/edu/python
 
+## 0x0B Credits
 
-## 0x0A Credits
+> *Console team: Rodrigo & Ronald*
+> *Web Static: Ronald*
 
 Rodrigo
 
