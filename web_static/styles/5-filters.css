@@ -1,5 +1,4 @@
 .filters {
-  color: #FFF;
   height: 70px;
   width: 100%;
   border: 1px solid #DDDDDD;
@@ -22,4 +21,25 @@ button {
 
 button:hover {
   opacity: .9;
+}
+
+.locations,
+.amenities {
+  height: 100%;
+  width: 25%;
+}
+
+.locations {
+  border-right: 1px solid #DDDDDD;
+}
+
+.locations h3,
+.amenities h3{
+  font-weight: 600;
+}
+
+.locations h4,
+.amenities h4 {
+  font-weight: 400;
+  font-size: 14px;
 }
