@@ -4,7 +4,7 @@
   border: 1px solid #DDDDDD;
   border-radius: 4px;
   display: flex;
-  flex-direction: row;
+  align-items: center;
 }
 
 button {
@@ -27,6 +27,8 @@ button:hover {
 .amenities {
   height: 100%;
   width: 25%;
+  display: inline-block;
+  vertical-align: left;
 }
 
 .locations {
@@ -36,10 +38,12 @@ button:hover {
 .locations h3,
 .amenities h3{
   font-weight: 600;
+  margin: 1em 0 auto 20px;
 }
 
 .locations h4,
 .amenities h4 {
   font-weight: 400;
   font-size: 14px;
+  margin: auto 0 auto 20px;
 }
