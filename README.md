@@ -275,19 +275,19 @@ e952b772-80a5-41e9-b728-6bc4dc5c21b4
 
 ## 0x06 Web Static
 
-* [0-index.html](web_static/0-index.html)
-* [1-index.html](web_static/1-index.html)
-* [2-index.html](web_static/2-index.html)
-* [3-index.html](web_static/3-index.html)
-* [4-index.html](web_static/4-index.html)
-* [5-index.html](web_static/5-index.html)
-* [6-index.html](web_static/6-index.html)
-* [7-index.html](web_static/7-index.html)
-* [8-index.html](web_static/8-index.html)
-* [100-index.html](web_static/100-index.html)
-* [101-index.html](web_static/101-index.html)
-* [102-index.html](web_static/102-index.html)
-* [103-index.html](web_static/103-index.html)
+* [0-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/0-index.html)
+* [1-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/1-index.html)
+* [2-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/2-index.html)
+* [3-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/3-index.html)
+* [4-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/4-index.html)
+* [5-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/5-index.html)
+* [6-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/6-index.html)
+* [7-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/7-index.html)
+* [8-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/8-index.html)
+* [100-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/100-index.html)
+* [101-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/101-index.html)
+* [102-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/102-index.html)
+* [103-index.html](https://ralexrivero.github.io/AirBnB_clone/web_static/103-index.html)
 
 ## 0x07 License
 
