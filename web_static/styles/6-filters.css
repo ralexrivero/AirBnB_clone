@@ -57,12 +57,13 @@ button:hover {
   border-radius: 4px;
   border: 1px solid #DDDDDD;
   padding: 20px 20px 20px 20px;
-  display: block;
+  display: none;
   background-color: #FAFAFA;
+  margin: 17px 0 0 0;
 }
 
 .popover ul {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 ul > ul {
@@ -74,6 +75,7 @@ ul > ul {
 
 .popover h2 {
   font-size: 16px;
+  margin: 5px auto 5px auto;
 }
 
 /* drop down on hover */
