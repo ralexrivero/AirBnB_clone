@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .places h1 {
   width: 100%;
   font-size: 30px;
@@ -43,10 +44,15 @@
     text-align: center;
 }
 
+/* ******************************************/
+/* information box with icons */
+/* ******************************************/
+
 .information {
   height: 80px;
   border-top: 1px solid #DDDDDD;
   border-bottom: 1px solid #DDDDDD;
+  display: inline-block;
 }
 
 /***********/
@@ -69,4 +75,5 @@
 .number_bathrooms {
   width: 100px;
   background-repeat: no-repeat;
+  dispay: inline-block;
 }
