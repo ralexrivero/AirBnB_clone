@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   background-color: #FAFAFA;
+  position: relative;
 }
 
 button {
@@ -28,8 +29,11 @@ button:hover {
 .amenities {
   height: 100%;
   width: 25%;
-  display: inline-block;
-  vertical-align: left;
+  /* display: inline-block;
+  vertical-align: left; */
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
 }
 
 .locations {
@@ -80,10 +84,17 @@ ul > ul {
 
 /* drop down on hover */
 
+.locations:hover,
+.amenities:hover {
+  cursor: pointer;
+}
+
 .locations:hover .popover {
   display: block;
+  cursor: pointer;
 }
 
 .amenities:hover .popover {
   display: block;
+  cursor: pointer;
 }

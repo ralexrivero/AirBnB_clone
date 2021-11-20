@@ -4,7 +4,12 @@ footer {
   border-top: 1px solid #CCCCCC;
   position: absolute;
   bottom: 0;
-
+  background-color: #FFF;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  display: flex;
 }
 
 footer p {
