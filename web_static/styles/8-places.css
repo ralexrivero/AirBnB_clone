@@ -26,6 +26,9 @@
   text-align: center;
 }
 
+article {
+  z-index: -1;
+}
 /* ************************************************** */
 /* article information */
 /* ************************************************** */
@@ -52,7 +55,7 @@
   height: 80px;
   border-top: 1px solid #DDDDDD;
   border-bottom: 1px solid #DDDDDD;
-  display: inline-block;
+  display: block;
 }
 
 /***********/
@@ -75,5 +78,5 @@
 .number_bathrooms {
   width: 100px;
   background-repeat: no-repeat;
-  dispay: inline-block;
+  display: inline-block;
 }
