@@ -109,7 +109,8 @@ article {
 /* more information */
 /*******************************************/
 
-.places .amenities {
+.places .amenities,
+.places .reviews {
   margin-top: 40px;
   width: 100%;
   height: inherit;
@@ -128,11 +129,17 @@ article {
   border-bottom: 1px solid #DDDDDD;
 }
 
+.places .reviews h3 {
+  font-size: 14px;
+}
+
+.places .reviews p {
+  font-size: 12px;
+}
 /*******************************************/
 /* amenities icons */
 /*******************************************/
-.places .amenities ul li,
-.places .reviews ul li {
+.places .amenities ul li{
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
