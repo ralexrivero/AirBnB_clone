@@ -7,8 +7,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
+  clear: left;
   /* position: fixed;
   display: flex; */
 }

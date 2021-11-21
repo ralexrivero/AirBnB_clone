@@ -1,15 +1,21 @@
 html {
   min-height: 100vh;
-  position: relative;
+  width: 100vw;
+  /* position: relative; */
 }
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
   color: #484848;
   font-size: 14px;
   font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: flex;
+  flex-direction: column
 }
 .container {
+  width: 100%;
   max-width: 1000px;
   margin: 30px auto;
+  float: left;
 }
