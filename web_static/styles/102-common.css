@@ -1,3 +1,32 @@
+/****************************************************************************/
+/* mobile first resposive */
+/****************************************************************************/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: tomato;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: turquoise;
+  }
+}
+
 html {
   box-sizing: border-box;
 }
