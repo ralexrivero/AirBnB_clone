@@ -17,6 +17,7 @@
   margin: 20px;
   border-radius: 4px;
   border: 1px solid #FF5A5F;
+  box-sizing: border-box;
 }
 
 .places h2 {
