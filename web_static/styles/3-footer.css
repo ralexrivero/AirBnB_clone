@@ -2,16 +2,11 @@ footer {
   height: 60px;
   width: 100%;
   border-top: 1px solid #CCCCCC;
-  clear: left;
+  display: flex;
   background-color: #FFF;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* position: absolute;
-  bottom: 0; */
-  clear: left;
-  /* position: fixed;
-  display: flex; */
 }
 
 footer p {
