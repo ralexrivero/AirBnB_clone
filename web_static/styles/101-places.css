@@ -51,8 +51,7 @@
     align-items: center;
     justify-content: center;
     padding: 5px;
-    position: relative;
-    bottom: 10;
+    margin-bottom: 5px;
 }
 
 /* ******************************************/
