@@ -11,11 +11,15 @@ body {
   font-size: 14px;
   font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
 }
 .container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 100%;
   max-width: 1000px;
   margin: 30px auto;
-  float: left;
 }

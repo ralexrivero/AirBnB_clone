@@ -5,8 +5,6 @@
   border-radius: 4px;
   display: flex;
   align-items: center;
-  background-color: #FAFAFA;
-  /* position: relative; */
   box-sizing: border-box;
 }
 
@@ -24,6 +22,7 @@ button {
 
 button:hover {
   opacity: .9;
+  cursor: pointer;
 }
 
 .locations,
