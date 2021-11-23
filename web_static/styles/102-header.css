@@ -1,19 +1,7 @@
-@media only screen and (max-width: 600px) {
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
-}
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-
-}
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) */
 header {
+  z-index: 4;
   color: #fff;
   height: 3.5rem;
   width: 100%;
@@ -21,6 +9,65 @@ header {
   background-image: url(../images/logo.png);
   background-repeat: no-repeat;
   background-size: contain;
-  background-position-x: 1rem;
+  background-position: center;
   float: left;
+  text-align: middle;
+}
+
+.nav_bar_level1 li ul {
+  display: none;
+}
+
+.nav_bar_level1 li {
+  display: none;
+}
+
+.nav_bar_level1 {
+  background-color: #FAFAFA;
+  border-radius: 4px;
+  border: 1px solid #DDDDDD;
+}
+
+.main_nav_burguer {
+  margin: .6rem 0 0 1rem;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bolder;
+  transform: rotate(90deg);
+  color: lightslategray;
+  transition-timing-function: ease-in-out;
+  transition: .2s;
+}
+
+.main_nav_burguer:hover {
+  cursor: pointer;
+  transform: rotate(0deg);
+  color: silver;
+  transition-timing-function: ease-in-out;
+  transition: .2s;
+}
+
+.main_nav_burguer:hover + .nav_bar_level1 li {
+  display: flex;
+  flex-direction: row;
+  transition-timing-function: ease-in-out;
+  transition: .2s;
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  header {
+      background-position: left;
+      background-position-x: 1rem;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
 }

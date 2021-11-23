@@ -23,21 +23,20 @@ html {
 /****************************************************************************/
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  body {
-    width: 100vw;
-    color: #484848;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: lightblue;
-  }
-  .container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin: 2rem auto;
-  }
+/* @media only screen and (max-width: 600px) */
+body {
+  z-index: 0;
+  width: 100vw;
+  color: #484848;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 2rem auto;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
