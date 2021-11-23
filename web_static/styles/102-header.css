@@ -15,11 +15,12 @@
 }
 header {
   color: #fff;
-  height: 70px;
+  height: 3.5rem;
   width: 100%;
   border-bottom: 1px solid #CCCCCC;
   background-image: url(../images/logo.png);
   background-repeat: no-repeat;
-  background-position-x: 20px;
+  background-size: contain;
+  background-position-x: 1rem;
   float: left;
 }
