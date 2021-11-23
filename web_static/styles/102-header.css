@@ -13,20 +13,9 @@ header {
   float: left;
   text-align: middle;
 }
-
-.nav_bar_level1 li ul {
-  display: none;
-}
-
-.nav_bar_level1 li {
-  display: none;
-}
-
-.nav_bar_level1 {
-  background-color: #FAFAFA;
-  border-radius: 4px;
-  border: 1px solid #DDDDDD;
-}
+/*****************************************************************/
+/* rotate burguer
+/*****************************************************************/
 
 .main_nav_burguer {
   margin: .6rem 0 0 1rem;
@@ -35,27 +24,75 @@ header {
   font-weight: bolder;
   transform: rotate(90deg);
   color: lightslategray;
-  transition-timing-function: ease-in-out;
-  transition: .2s;
+  transition: .2s ease-in-out;
 }
 
 .main_nav_burguer:hover {
   cursor: pointer;
   transform: rotate(0deg);
   color: silver;
-  transition-timing-function: ease-in-out;
-  transition: .2s;
+  transition: .2s ease-in-out;
 }
 
-.main_nav_burguer:hover + .nav_bar_level1 li {
-  display: flex;
-  flex-direction: row;
-  transition-timing-function: ease-in-out;
-  transition: .2s;
+/*****************************************************************/
+/* popup first level menu
+/*****************************************************************/
+.nav_bar_level1 {
+  width: 0%;
+  height: 0%;
+  border-radius: 4px;
+  transition: .2s ease-in-out;
+  background-color: yellow;
 }
 
+/* hide seccond level */
+.nav_bar_level1 li ul {
+  display: none;
+}
 
+/* hide first level */
+.nav_bar_level1 li{
+  display: none;
+}
 
+/* display first level */
+.main_nav_burguer:hover + .nav_bar_level1 li{
+  display: block;
+}
+/* display first level title*/
+.main_nav_burguer:hover + .nav_bar_level1 li span{
+  display: block;
+  font-size: 1.3rem;
+  margin: .5rem;
+  color: lightslategray;
+  font-weight: bold;
+  transition: .5s ease-in-out;
+}
+/* hover link menu */
+.nav_bar_level1 li span:hover {
+  background-color: #434343;
+  width: 100%;
+  padding: .2rem 1rem;
+  border-radius: 4px;
+  color: #FAFAFA;
+  cursor: pointer;
+}
+/* display first level background */
+.main_nav_burguer:hover + .nav_bar_level1
+{
+  display: block;
+  margin: 1rem;
+  padding: .8rem;
+  flex-direction: column;
+  transition: .3s ease-in-out;
+  width: 50vw;
+  transition: width 1s height 2s background-color 1s;
+}
+
+/*display second level */
+.nav_bar_level1 li span:hover + .nav_bar_level1 li ul {
+  display: block;
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 

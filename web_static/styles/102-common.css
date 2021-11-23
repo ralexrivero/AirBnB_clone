@@ -14,8 +14,6 @@
 /****************************************************************************/
 html {
   box-sizing: border-box;
-  font-size: 14px;
-  font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 /****************************************************************************/
@@ -26,11 +24,16 @@ html {
 /* @media only screen and (max-width: 600px) */
 body {
   z-index: 0;
+	font-size: 14px;
+	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
   width: 100vw;
   color: #484848;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+span {
+	color: #000000;
 }
 .container {
   display: flex;
