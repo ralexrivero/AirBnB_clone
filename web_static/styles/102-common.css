@@ -53,4 +53,8 @@ span {
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 
+	body {
+		max-width: 1920px;
+		margin: 0 auto;
+	}
 }
