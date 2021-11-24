@@ -117,6 +117,9 @@ ul li span:hover
       background-position: left;
       background-position-x: 1rem;
   }
+  .mobile_nav {
+    display: none;
+  }
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
