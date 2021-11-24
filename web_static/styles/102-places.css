@@ -108,7 +108,7 @@
 .max_guest,
 .number_rooms,
 .number_bathrooms {
-  width: 100px;
+  width: 33%;
   background-repeat: no-repeat;
   display:flex;
   flex-direction: column-reverse;
