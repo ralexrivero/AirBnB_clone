@@ -33,6 +33,12 @@ header {
   color: silver;
   transition: .2s ease-in-out;
 }
+
+/* accesibility focus ARIA */
+.main_nav_burguer:focus {
+  background-color: antiquewhite;
+}
+
 #main_check:checked {
   cursor: pointer;
   transform: rotate(0deg);

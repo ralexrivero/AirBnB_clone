@@ -13,14 +13,14 @@
   </head>
   <body>
     <header>
-      <div class="mobile_nav">
+      <div class="mobile_nav" role="navigation" aria-label="Navigate through site content">
         <label for="main_check" class="main_nav_burguer">|||</label aria-label="Responsive popup menu">
-        <input type="checkbox" id="main_check" name="main_check" class="main_nav_check" aria-hidden="true">
+        <input type="checkbox" id="main_check" name="main_check" class="main_nav_check" aria-hidden="true" tabindex=0>
           <ul>
               <ul class="nav_bar_level1">
                 <li>
                     <label for="second_check"><span>States</span></label>
-                    <input type="checkbox" name="second_check" id="second_check">
+                    <input type="checkbox" name="second_check" id="second_check" aria-hidden="true">
                   <ul>
                     <li><span>Arizona</span></li>
                     <li><span>California</span></li>
@@ -28,7 +28,7 @@
                   </li>
                 <li>
                   <label for="third_check"><span>Amenities</span></label>
-                  <input type="checkbox" name="second_check" id="third_check">
+                  <input type="checkbox" name="second_check" id="third_check" aria-hidden="true">
                   <ul>
                     <li><span>Internet</span></li>
                     <li><span>Tv</span></li>
@@ -43,7 +43,7 @@
       </div>
     </header>
     <div class="container">
-      <section class="filters">
+      <section class="filters" role="navigation">
         <div class="locations">
           <h3>States</h3>
           <h4>California, Arizona...</h4>
@@ -70,10 +70,10 @@
             <li>Iron</li>
           </ul>
         </div>
-        <button type="button" name="button">Search</button>
+        <button type="button" name="button" role="search" role="search">Search</button>
       </section> <!-- end fiter-->
 
-      <section class="places">
+      <section class="places" role="article">
         <h1>Places</h1>
         <article><!-- My home -->
           <div class="article_places_header">
@@ -349,7 +349,7 @@
 
         </section> <!-- end section -->
     </div>
-    <footer>
+    <footer aria-label="Footer brand information">
       <p>Best School</p>
     </footer>
   </body>
