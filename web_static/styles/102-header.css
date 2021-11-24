@@ -33,6 +33,12 @@ header {
   color: silver;
   transition: .2s ease-in-out;
 }
+#main_check:checked {
+  cursor: pointer;
+  transform: rotate(0deg);
+  color: silver;
+  transition: .2s ease-in-out;
+}
 
 /*****************************************************************/
 /* popup first level menu
@@ -42,10 +48,13 @@ header {
   height: 0%;
   border-radius: 4px;
   transition: .2s ease-in-out;
-  background-color: yellow;
+  background-color: aliceblue;
 }
-
-/* hide seccond level */
+/* hide checkbox */
+input {
+  display: none;
+}
+/* hide second level */
 .nav_bar_level1 li ul {
   display: none;
 }
@@ -56,11 +65,11 @@ header {
 }
 
 /* display first level */
-.main_nav_burguer:hover + .nav_bar_level1 li{
+#main_check:checked ~ * .nav_bar_level1 {
   display: block;
 }
 /* display first level title*/
-.main_nav_burguer:hover + .nav_bar_level1 li span{
+#main_check:checked ~ * .nav_bar_level1 li {
   display: block;
   font-size: 1.3rem;
   margin: .5rem;
@@ -69,7 +78,9 @@ header {
   transition: .5s ease-in-out;
 }
 /* hover link menu */
-.nav_bar_level1 li span:hover {
+.nav_bar_level1 li label span:hover,
+ul li span:hover
+ {
   background-color: #434343;
   width: 100%;
   padding: .2rem 1rem;
@@ -78,7 +89,7 @@ header {
   cursor: pointer;
 }
 /* display first level background */
-.main_nav_burguer:hover + .nav_bar_level1
+#main_check:checked ~ * .nav_bar_level1
 {
   display: block;
   margin: 1rem;
@@ -90,7 +101,10 @@ header {
 }
 
 /*display second level */
-.nav_bar_level1 li span:hover + ul{
+#second_check:checked  + ul{
+  display: block;
+}
+#third_check:checked  + ul{
   display: block;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
