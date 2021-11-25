@@ -23,7 +23,6 @@ html {
 /* Extra small devices (phones, 600px and down) */
 /* @media only screen and (max-width: 600px) */
 body {
-  z-index: 0;
 	font-size: 14px;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
   width: 100vw;
@@ -40,6 +39,19 @@ span {
   flex-direction: column;
   flex-grow: 1;
   margin: 2rem auto;
+}
+
+/*****************************/
+/* index
+/*****************************/
+.container {
+	z-index: 0;
+}
+.div_price_by_night {
+	z-index: 10;
+}
+* {
+	z-index: inherit;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

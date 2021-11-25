@@ -68,8 +68,25 @@
     justify-content: center;
     padding: 5px;
     margin-bottom: 5px;
+    transition: 0.2s ease-in-out;
+}
+/* ******************************************/
+/* ARIA
+/* ******************************************/
+.price_by_night:hover,
+.price_by_night:focus {
+  background-color: antiquewhite;
+  transform: scale(1.1);
+  font-weight: bold;
+  border: 2px dotted;
+  transition: 0.2s ease-in-out;
 }
 
+article:hover,
+article:focus {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.2s ease-in-out;
+}
 /* ******************************************/
 /* information box with icons */
 /* ******************************************/

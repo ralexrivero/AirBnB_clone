@@ -65,6 +65,15 @@
     font-size: 14px;
     margin: auto 0 auto 30px;
   }
+/* Focus for ARIA accesibility */
+.locations:focus,
+.amenities:focus {
+  background-color: antiquewhite;
+}
+
+article:focus {
+  background-color: antiquewhite;
+}
 
   /* ================================================================= */
   /* dropdown menu */
