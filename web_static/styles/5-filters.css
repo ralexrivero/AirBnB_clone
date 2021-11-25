@@ -30,7 +30,6 @@ button:hover {
   height: 100%;
   width: 25%;
   display: inline-block;
-  vertical-align: left;
 }
 
 .locations {
