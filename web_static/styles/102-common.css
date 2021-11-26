@@ -26,7 +26,7 @@ body {
   z-index: 0;
 	font-size: 14px;
 	font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  width: 100vw;
+  width: 100%;
   color: #484848;
   display: flex;
   flex-direction: column;
