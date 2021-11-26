@@ -11,7 +11,7 @@ header {
   background-size: contain;
   background-position: center;
   float: left;
-  text-align: middle;
+  text-align: left;
 }
 /*****************************************************************/
 /* rotate burguer
@@ -104,7 +104,6 @@ ul li span:hover
   flex-direction: column;
   transition: .3s ease-in-out;
   width: 50vw;
-  transition: width 1s height 2s background-color 1s;
 }
 
 /*display second level */
