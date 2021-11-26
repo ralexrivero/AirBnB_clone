@@ -29,8 +29,6 @@ button:hover {
 .amenities {
   height: 100%;
   width: 25%;
-  /* display: inline-block;
-  vertical-align: left; */
   justify-content: center;
   flex-direction: column;
   position: relative;
@@ -66,10 +64,13 @@ button:hover {
   margin: 17px 0 0 0;
 }
 
-.popover ul {
+.popover ul{
   margin-left: 10px;
 }
 
+.popover li ul {
+  padding: 0;
+}
 ul > ul {
   padding: 0;
 }
